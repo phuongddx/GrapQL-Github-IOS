@@ -8,6 +8,6 @@
 
 
 2. Download - schema of GitHub
-> apollo-codegen download-schema https://api.github.com/graphql --header "Authorization: bearer <Token github.com/>" --output schema.json
+ > apollo-codegen download-schema https://api.github.com/graphql --header "Authorization: bearer <TokenPrivateGithub>" --output schema.json
 3. Chạy câu lệnh này để generate ra code GraphQLQuery >>>> done. Trước khi chạy thì cần có file schema và .graphql ( chứa các câu query)
-> apollo-codegen generate **/*.graphql --schema schema.json --output <Tên của file code được generate ra>.swift
+ > apollo-codegen generate **/*.graphql --schema schema.json --output <UserAPI>.swift

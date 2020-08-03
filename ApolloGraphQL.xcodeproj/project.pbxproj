@@ -9,19 +9,20 @@
 /* Begin PBXBuildFile section */
 		68850D2D54669EB27FAF77CA /* Pods_ApolloGraphQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */; };
 		BC225CC124D88DA400E2D68A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC024D88DA400E2D68A /* API.swift */; };
+		BC225CC324D8927600E2D68A /* Networkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC224D8927600E2D68A /* Networkl.swift */; };
 		BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5ED41524D7EF6B0082147A /* AppDelegate.swift */; };
 		BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5ED41724D7EF6B0082147A /* SceneDelegate.swift */; };
 		BC5ED41A24D7EF6B0082147A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5ED41924D7EF6B0082147A /* ViewController.swift */; };
 		BC5ED41D24D7EF6B0082147A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED41B24D7EF6B0082147A /* Main.storyboard */; };
 		BC5ED41F24D7EF6D0082147A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED41E24D7EF6D0082147A /* Assets.xcassets */; };
 		BC5ED42224D7EF6D0082147A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED42024D7EF6D0082147A /* LaunchScreen.storyboard */; };
-		BC5ED42C24D7F11A0082147A /* Networkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5ED42B24D7F11A0082147A /* Networkl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		74BD593F3FDBA95AE6414160 /* Pods-ApolloGraphQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloGraphQL.debug.xcconfig"; path = "Target Support Files/Pods-ApolloGraphQL/Pods-ApolloGraphQL.debug.xcconfig"; sourceTree = "<group>"; };
 		ACDBA350A66947E99133F508 /* Pods-ApolloGraphQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloGraphQL.release.xcconfig"; path = "Target Support Files/Pods-ApolloGraphQL/Pods-ApolloGraphQL.release.xcconfig"; sourceTree = "<group>"; };
 		BC225CC024D88DA400E2D68A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		BC225CC224D8927600E2D68A /* Networkl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkl.swift; sourceTree = "<group>"; };
 		BC5ED41224D7EF6B0082147A /* ApolloGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5ED41524D7EF6B0082147A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC5ED41724D7EF6B0082147A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		BC5ED41E24D7EF6D0082147A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC5ED42124D7EF6D0082147A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC5ED42324D7EF6D0082147A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC5ED42B24D7F11A0082147A /* Networkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Networkl.swift; path = ../../../Networkl.swift; sourceTree = "<group>"; };
 		ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,7 +100,7 @@
 		BC5ED42A24D7F1100082147A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				BC5ED42B24D7F11A0082147A /* Networkl.swift */,
+				BC225CC224D8927600E2D68A /* Networkl.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -239,9 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5ED41A24D7EF6B0082147A /* ViewController.swift in Sources */,
+				BC225CC324D8927600E2D68A /* Networkl.swift in Sources */,
 				BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */,
 				BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */,
-				BC5ED42C24D7F11A0082147A /* Networkl.swift in Sources */,
 				BC225CC124D88DA400E2D68A /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

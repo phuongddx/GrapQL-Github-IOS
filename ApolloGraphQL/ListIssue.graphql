@@ -1,6 +1,6 @@
-query ListIssue($owner: String!, $name: String!, $numberIssue: Int!){
+query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [IssueState!]){
   repository(owner: $owner, name: $name) {
-    issues(last: $numberIssue) {
+    issues(last: $numberIssue, states: $states) {
       edges {
         node {
           createdAt

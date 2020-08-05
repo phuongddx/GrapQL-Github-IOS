@@ -92,7 +92,8 @@ extension IssuesViewController {
     }
     
     private func loadListIssue(owner: String, nameRepo: String) {
-        apollo.fetch(query: ListIssueQuery.init(owner: owner, name: nameRepo, numberIssue: 100), cachePolicy: .fetchIgnoringCacheData, context: nil, queue: .main) { [weak self] (results) in
+        let query = ListIssueQuery.init(owner: owner, name: nameRepo, numberIssue: 100, states: [IssueState.closed])
+        apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData, context: nil, queue: .main) { [weak self] (results) in
             switch results {
             case .success(let results):
                 if let data = results.data {

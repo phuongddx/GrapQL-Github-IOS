@@ -155,20 +155,22 @@ public final class ListIssueQuery: GraphQLQuery {
     public var operationName: String = "ListIssue"
     
   public let operationDefinition =
-    "query ListIssue($owner: String!, $name: String!, $numberIssue: Int!) {\n  repository(owner: $owner, name: $name) {\n    __typename\n    issues(last: $numberIssue) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          createdAt\n          author {\n            __typename\n            login\n          }\n          participants(first: 10) {\n            __typename\n            nodes {\n              __typename\n              createdAt\n              login\n            }\n          }\n          state\n          title\n          url\n          comments(first: 10) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                author {\n                  __typename\n                  login\n                  avatarUrl\n                  resourcePath\n                }\n                bodyText\n              }\n            }\n          }\n          labels(first: 5) {\n            __typename\n            edges {\n              __typename\n              node {\n                __typename\n                createdAt\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+    "query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [IssueState!]) {\n  repository(owner: $owner, name: $name) {\n    __typename\n    issues(last: $numberIssue, states: $states) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          createdAt\n          author {\n            __typename\n            login\n          }\n          participants(first: 10) {\n            __typename\n            nodes {\n              __typename\n              createdAt\n              login\n            }\n          }\n          state\n          title\n          url\n          comments(first: 10) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                author {\n                  __typename\n                  login\n                  avatarUrl\n                  resourcePath\n                }\n                bodyText\n              }\n            }\n          }\n          labels(first: 5) {\n            __typename\n            edges {\n              __typename\n              node {\n                __typename\n                createdAt\n                name\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
 
   public var owner: String
   public var name: String
   public var numberIssue: Int
+  public var states: [IssueState]?
 
-  public init(owner: String, name: String, numberIssue: Int) {
+  public init(owner: String, name: String, numberIssue: Int, states: [IssueState]?) {
     self.owner = owner
     self.name = name
     self.numberIssue = numberIssue
+    self.states = states
   }
 
   public var variables: GraphQLMap? {
-    return ["owner": owner, "name": name, "numberIssue": numberIssue]
+    return ["owner": owner, "name": name, "numberIssue": numberIssue, "states": states]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -203,7 +205,7 @@ public final class ListIssueQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("issues", arguments: ["last": GraphQLVariable("numberIssue")], type: .nonNull(.object(Issue.selections))),
+        GraphQLField("issues", arguments: ["last": GraphQLVariable("numberIssue"), "states": GraphQLVariable("states")], type: .nonNull(.object(Issue.selections))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -1377,131 +1379,132 @@ public struct RepositoryDetails: GraphQLFragment {
     self.init(unsafeResultMap: ["__typename": "Repository", "name": name, "owner": owner.resultMap, "stargazers": stargazers.resultMap, "url": url])
   }
 
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  /// The name of the repository.
+  public var name: String {
+    get {
+      return resultMap["name"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  /// The User owner of the repository.
+  public var owner: Owner {
+    get {
+      return Owner(unsafeResultMap: resultMap["owner"]! as! ResultMap)
+    }
+    set {
+      resultMap.updateValue(newValue.resultMap, forKey: "owner")
+    }
+  }
+
+  /// A list of users who have starred this starrable.
+  public var stargazers: Stargazer {
+    get {
+      return Stargazer(unsafeResultMap: resultMap["stargazers"]! as! ResultMap)
+    }
+    set {
+      resultMap.updateValue(newValue.resultMap, forKey: "stargazers")
+    }
+  }
+
+  /// The HTTP URL for this repository
+  public var url: String {
+    get {
+      return resultMap["url"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "url")
+    }
+  }
+
+  public struct Owner: GraphQLSelectionSet {
+    public static let possibleTypes = ["Organization", "User"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("resourcePath", type: .nonNull(.scalar(String.self))),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public static func makeOrganization(resourcePath: String) -> Owner {
+      return Owner(unsafeResultMap: ["__typename": "Organization", "resourcePath": resourcePath])
+    }
+
+    public static func makeUser(resourcePath: String) -> Owner {
+      return Owner(unsafeResultMap: ["__typename": "User", "resourcePath": resourcePath])
+    }
+
     public var __typename: String {
-        get {
-            return resultMap["__typename"]! as! String
-        }
-        set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-        }
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
     }
 
-    /// The name of the repository.
-    public var name: String {
-        get {
-            return resultMap["name"]! as! String
-        }
-        set {
-            resultMap.updateValue(newValue, forKey: "name")
-        }
+    /// The HTTP URL for the owner.
+    public var resourcePath: String {
+      get {
+        return resultMap["resourcePath"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "resourcePath")
+      }
+    }
+  }
+
+  public struct Stargazer: GraphQLSelectionSet {
+    public static let possibleTypes = ["StargazerConnection"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("totalCount", type: .nonNull(.scalar(Int.self))),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
     }
 
-    /// The User owner of the repository.
-    public var owner: Owner {
-        get {
-            return Owner(unsafeResultMap: resultMap["owner"]! as! ResultMap)
-        }
-        set {
-            resultMap.updateValue(newValue.resultMap, forKey: "owner")
-        }
+    public init(totalCount: Int) {
+      self.init(unsafeResultMap: ["__typename": "StargazerConnection", "totalCount": totalCount])
     }
 
-    /// A list of users who have starred this starrable.
-    public var stargazers: Stargazer {
-        get {
-            return Stargazer(unsafeResultMap: resultMap["stargazers"]! as! ResultMap)
-        }
-        set {
-            resultMap.updateValue(newValue.resultMap, forKey: "stargazers")
-        }
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
     }
 
-    /// The HTTP URL for this repository
-    public var url: String {
-        get {
-            return resultMap["url"]! as! String
-        }
-        set {
-            resultMap.updateValue(newValue, forKey: "url")
-        }
+    /// Identifies the total count of items in the connection.
+    public var totalCount: Int {
+      get {
+        return resultMap["totalCount"]! as! Int
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "totalCount")
+      }
     }
-
-    public struct Owner: GraphQLSelectionSet {
-        public static let possibleTypes = ["Organization", "User"]
-
-        public static let selections: [GraphQLSelection] = [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("resourcePath", type: .nonNull(.scalar(String.self))),
-        ]
-
-        public private(set) var resultMap: ResultMap
-        public init(unsafeResultMap: ResultMap) {
-            self.resultMap = unsafeResultMap
-        }
-
-        public static func makeOrganization(resourcePath: String) -> Owner {
-            return Owner(unsafeResultMap: ["__typename": "Organization", "resourcePath": resourcePath])
-        }
-
-        public static func makeUser(resourcePath: String) -> Owner {
-            return Owner(unsafeResultMap: ["__typename": "User", "resourcePath": resourcePath])
-        }
-
-        public var __typename: String {
-            get {
-                return resultMap["__typename"]! as! String
-            }
-            set {
-                resultMap.updateValue(newValue, forKey: "__typename")
-            }
-        }
-
-        /// The HTTP URL for the owner.
-        public var resourcePath: String {
-            get {
-                return resultMap["resourcePath"]! as! String
-            }
-            set {
-                resultMap.updateValue(newValue, forKey: "resourcePath")
-            }
-        }
-    }
-
-    public struct Stargazer: GraphQLSelectionSet {
-        public static let possibleTypes = ["StargazerConnection"]
-
-        public static let selections: [GraphQLSelection] = [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("totalCount", type: .nonNull(.scalar(Int.self))),
-        ]
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-            self.resultMap = unsafeResultMap
-        }
-
-        public init(totalCount: Int) {
-            self.init(unsafeResultMap: ["__typename": "StargazerConnection", "totalCount": totalCount])
-        }
-
-        public var __typename: String {
-            get {
-                return resultMap["__typename"]! as! String
-            }
-            set {
-                resultMap.updateValue(newValue, forKey: "__typename")
-            }
-        }
-
-        /// Identifies the total count of items in the connection.
-        public var totalCount: Int {
-            get {
-                return resultMap["totalCount"]! as! Int
-            }
-            set {
-                resultMap.updateValue(newValue, forKey: "totalCount")
-            }
-        }
-    }
+  }
 }

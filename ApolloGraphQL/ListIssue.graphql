@@ -1,0 +1,44 @@
+query ListIssue($owner: String!, $name: String!, $numberIssue: Int!){
+  repository(owner: $owner, name: $name) {
+    issues(last: $numberIssue) {
+      edges {
+        node {
+          createdAt
+          author {
+            login
+          }
+          participants(first: 10) { 
+          	nodes { 
+              createdAt
+          		login
+            }
+          }
+          state
+          title
+          url
+        	comments(first: 10) {
+            totalCount
+          	edges {
+              node {
+                author { 
+                	login
+                  avatarUrl
+                  resourcePath
+                }
+                bodyText
+              }
+            }
+          }
+          labels(first:5) {
+            edges {
+              node {
+              	createdAt
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

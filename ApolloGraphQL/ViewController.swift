@@ -8,23 +8,32 @@
 
 import UIKit
 import Apollo
+import ObjectMapper
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var searchTf: UITextField!
     @IBAction func searchBtn(_ sender: Any) {
-        
-        
         loadData(query: searchTf.text!)
         find()
+        openLoginVC()
     }
     
+    private var issueNode: [IssuseNodeModel] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
-        
+    }
+    
+    
+    private func openLoginVC() {
+        if let loginVC = Utils.viewController(LoginViewController.storyBoardId, storyboardName: LoginViewController.storyBoardName) as? LoginViewController {
+            let loginNav = UINavigationController.init(rootViewController: loginVC)
+            loginNav.modalPresentationStyle = .fullScreen
+            self.present(loginNav, animated: true, completion: nil)
+        }
     }
     
     func find() {
@@ -35,7 +44,6 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print("error: \(error.localizedDescription)")
             }
-            
         }
     }
     

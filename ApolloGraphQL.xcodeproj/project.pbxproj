@@ -10,6 +10,14 @@
 		68850D2D54669EB27FAF77CA /* Pods_ApolloGraphQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */; };
 		BC225CC124D88DA400E2D68A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC024D88DA400E2D68A /* API.swift */; };
 		BC225CC324D8927600E2D68A /* Networkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC224D8927600E2D68A /* Networkl.swift */; };
+		BC225CC624D9D26600E2D68A /* IssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC524D9D26600E2D68A /* IssueModel.swift */; };
+		BC225CCA24D9D6C900E2D68A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC924D9D6C900E2D68A /* LoginViewController.swift */; };
+		BC225CCD24D9D71700E2D68A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CCC24D9D71700E2D68A /* Utils.swift */; };
+		BC225CCF24D9D7C400E2D68A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC225CCE24D9D7C400E2D68A /* Login.storyboard */; };
+		BC225CD224D9DA9B00E2D68A /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CD124D9DA9B00E2D68A /* IssuesViewController.swift */; };
+		BC225CD424D9DAD600E2D68A /* Issues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC225CD324D9DAD600E2D68A /* Issues.storyboard */; };
+		BC225CD824D9DDA200E2D68A /* IssuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CD724D9DDA200E2D68A /* IssuesTableViewCell.swift */; };
+		BC225CDA24D9DDD400E2D68A /* IssuesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC225CD924D9DDD400E2D68A /* IssuesTableViewCell.xib */; };
 		BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5ED41524D7EF6B0082147A /* AppDelegate.swift */; };
 		BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5ED41724D7EF6B0082147A /* SceneDelegate.swift */; };
 		BC5ED41A24D7EF6B0082147A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5ED41924D7EF6B0082147A /* ViewController.swift */; };
@@ -23,6 +31,14 @@
 		ACDBA350A66947E99133F508 /* Pods-ApolloGraphQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloGraphQL.release.xcconfig"; path = "Target Support Files/Pods-ApolloGraphQL/Pods-ApolloGraphQL.release.xcconfig"; sourceTree = "<group>"; };
 		BC225CC024D88DA400E2D68A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BC225CC224D8927600E2D68A /* Networkl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkl.swift; sourceTree = "<group>"; };
+		BC225CC524D9D26600E2D68A /* IssueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueModel.swift; sourceTree = "<group>"; };
+		BC225CC924D9D6C900E2D68A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BC225CCC24D9D71700E2D68A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BC225CCE24D9D7C400E2D68A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		BC225CD124D9DA9B00E2D68A /* IssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		BC225CD324D9DAD600E2D68A /* Issues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Issues.storyboard; sourceTree = "<group>"; };
+		BC225CD724D9DDA200E2D68A /* IssuesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesTableViewCell.swift; sourceTree = "<group>"; };
+		BC225CD924D9DDD400E2D68A /* IssuesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssuesTableViewCell.xib; sourceTree = "<group>"; };
 		BC5ED41224D7EF6B0082147A /* ApolloGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5ED41524D7EF6B0082147A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC5ED41724D7EF6B0082147A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +79,67 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC225CC424D9CFD200E2D68A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC225CC524D9D26600E2D68A /* IssueModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC225CC724D9D68400E2D68A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BC225CD024D9DA8B00E2D68A /* Issues */,
+				BC225CC824D9D69400E2D68A /* Login */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		BC225CC824D9D69400E2D68A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BC225CC924D9D6C900E2D68A /* LoginViewController.swift */,
+				BC225CCE24D9D7C400E2D68A /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BC225CCB24D9D70200E2D68A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC225CCC24D9D71700E2D68A /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BC225CD024D9DA8B00E2D68A /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				BC225CD624D9DD8E00E2D68A /* IssuesTableViewCell */,
+				BC225CD524D9DD8300E2D68A /* View */,
+			);
+			path = Issues;
+			sourceTree = "<group>";
+		};
+		BC225CD524D9DD8300E2D68A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC225CD124D9DA9B00E2D68A /* IssuesViewController.swift */,
+				BC225CD324D9DAD600E2D68A /* Issues.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC225CD624D9DD8E00E2D68A /* IssuesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC225CD724D9DDA200E2D68A /* IssuesTableViewCell.swift */,
+				BC225CD924D9DDD400E2D68A /* IssuesTableViewCell.xib */,
+			);
+			path = IssuesTableViewCell;
+			sourceTree = "<group>";
+		};
 		BC5ED40924D7EF6B0082147A = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				BC225CC024D88DA400E2D68A /* API.swift */,
+				BC225CC424D9CFD200E2D68A /* Model */,
 				BC5ED42A24D7F1100082147A /* Network */,
+				BC225CC724D9D68400E2D68A /* Screen */,
+				BC225CCB24D9D70200E2D68A /* Utils */,
 				BC5ED41524D7EF6B0082147A /* AppDelegate.swift */,
 				BC5ED41724D7EF6B0082147A /* SceneDelegate.swift */,
 				BC5ED41924D7EF6B0082147A /* ViewController.swift */,
@@ -166,9 +246,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC225CCF24D9D7C400E2D68A /* Login.storyboard in Resources */,
+				BC225CD424D9DAD600E2D68A /* Issues.storyboard in Resources */,
 				BC5ED42224D7EF6D0082147A /* LaunchScreen.storyboard in Resources */,
 				BC5ED41F24D7EF6D0082147A /* Assets.xcassets in Resources */,
 				BC5ED41D24D7EF6B0082147A /* Main.storyboard in Resources */,
+				BC225CDA24D9DDD400E2D68A /* IssuesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh apollo-codegen download-schema https://api.github.com/graphql --header \"Authorization: bearer bbcacd77aa7845860117ef30affa0da011e2f972\" --output schema.json\n";
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh apollo-codegen download-schema https://api.github.com/graphql --header \"Authorization: bearer e1cffd92246b6b78a93aebbfc4d2ef720fef71c3\" --output schema.json\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -238,11 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC225CCA24D9D6C900E2D68A /* LoginViewController.swift in Sources */,
+				BC225CD824D9DDA200E2D68A /* IssuesTableViewCell.swift in Sources */,
 				BC5ED41A24D7EF6B0082147A /* ViewController.swift in Sources */,
 				BC225CC324D8927600E2D68A /* Networkl.swift in Sources */,
+				BC225CD224D9DA9B00E2D68A /* IssuesViewController.swift in Sources */,
 				BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */,
+				BC225CC624D9D26600E2D68A /* IssueModel.swift in Sources */,
 				BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */,
 				BC225CC124D88DA400E2D68A /* API.swift in Sources */,
+				BC225CCD24D9D71700E2D68A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

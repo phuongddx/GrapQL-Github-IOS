@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Issues View Controller-->
+        <scene sceneID="0U0-IF-E0k">
+            <objects>
+                <viewController storyboardIdentifier="IssuesViewController" id="yEm-gS-LhY" customClass="IssuesViewController" customModule="ApolloGraphQL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dKz-IZ-bQo"/>
+                        <viewControllerLayoutGuide type="bottom" id="kZg-rK-iO9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MYn-d6-jfK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TX7-MA-nFY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="787"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O9Y-hW-Jsw">
+                                <rect key="frame" x="108.5" y="831" width="197" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="Third"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentedControl_ValueChanged:" destination="yEm-gS-LhY" eventType="valueChanged" id="VdZ-Fy-CEb"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TX7-MA-nFY" firstAttribute="top" secondItem="dKz-IZ-bQo" secondAttribute="bottom" id="0pr-JD-EOO"/>
+                            <constraint firstItem="O9Y-hW-Jsw" firstAttribute="top" secondItem="TX7-MA-nFY" secondAttribute="bottom" id="BUN-Br-uxd"/>
+                            <constraint firstItem="TX7-MA-nFY" firstAttribute="leading" secondItem="MYn-d6-jfK" secondAttribute="leading" id="FTL-4w-5bV"/>
+                            <constraint firstItem="O9Y-hW-Jsw" firstAttribute="centerX" secondItem="MYn-d6-jfK" secondAttribute="centerX" id="ZCS-HQ-ghq"/>
+                            <constraint firstAttribute="trailing" secondItem="TX7-MA-nFY" secondAttribute="trailing" id="sgK-2B-YoO"/>
+                            <constraint firstItem="kZg-rK-iO9" firstAttribute="top" secondItem="O9Y-hW-Jsw" secondAttribute="bottom" id="ziI-ra-Sme"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="O9Y-hW-Jsw" id="MwB-5N-0Zq"/>
+                        <outlet property="tableView" destination="TX7-MA-nFY" id="gfO-Q8-cby"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAG-2w-JnS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>

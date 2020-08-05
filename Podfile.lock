@@ -2,17 +2,21 @@ PODS:
   - Apollo (0.30.0):
     - Apollo/Core (= 0.30.0)
   - Apollo/Core (0.30.0)
+  - ObjectMapper (3.5.3)
 
 DEPENDENCIES:
   - Apollo
+  - ObjectMapper (~> 3.5)
 
 SPEC REPOS:
   trunk:
     - Apollo
+    - ObjectMapper
 
 SPEC CHECKSUMS:
   Apollo: c10bf1a4c7db5237be1056ace16347cd1cdcb863
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
 
-PODFILE CHECKSUM: fd768719dc70e98a6029a981222fb6595c050f25
+PODFILE CHECKSUM: 1bca762aa642d68f31f8e72b589312f485b35864
 
 COCOAPODS: 1.8.1

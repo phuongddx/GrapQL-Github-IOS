@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KJ8-gA-4rs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Rft-NU-h2x">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="KJ8-gA-4rs" customClass="LoginViewController" customModule="ApolloGraphQL" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J3c-9W-mq3"/>
+                        <viewControllerLayoutGuide type="bottom" id="8B9-gT-PXH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w70-kj-rIW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gb3-rZ-qEc">
+                                <rect key="frame" x="70" y="344" width="274" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PRW-gu-ZcA"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login_TouchUpInside:" destination="KJ8-gA-4rs" eventType="touchUpInside" id="oWz-Yv-s5i"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Personal access token" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5D-fg-iIX">
+                                <rect key="frame" x="15" y="244" width="384" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OI5-MV-dtC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gb3-rZ-qEc" firstAttribute="leading" secondItem="w70-kj-rIW" secondAttribute="leadingMargin" constant="50" id="KG4-w9-n3h"/>
+                            <constraint firstItem="w5D-fg-iIX" firstAttribute="top" secondItem="J3c-9W-mq3" secondAttribute="bottom" constant="200" id="NiM-ty-XOS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gb3-rZ-qEc" secondAttribute="trailing" constant="50" id="Tuw-Xu-7tN"/>
+                            <constraint firstItem="w5D-fg-iIX" firstAttribute="leading" secondItem="w70-kj-rIW" secondAttribute="leading" constant="15" id="YbV-67-fZ1"/>
+                            <constraint firstAttribute="trailing" secondItem="w5D-fg-iIX" secondAttribute="trailing" constant="15" id="uEq-Hp-cyX"/>
+                            <constraint firstItem="gb3-rZ-qEc" firstAttribute="top" secondItem="w5D-fg-iIX" secondAttribute="bottom" constant="50" id="wyY-hk-8Np"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="gb3-rZ-qEc" id="fkU-Wx-HxA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54l-eE-yfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="119"/>
+        </scene>
+    </scenes>
+</document>

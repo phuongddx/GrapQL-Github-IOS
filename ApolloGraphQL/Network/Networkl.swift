@@ -12,7 +12,7 @@ import Apollo
 class Network {
     static let shared = Network()
 //    private let token: String = "e1cffd92246b6b78a93aebbfc4d2ef720fef71c3"  exprice
-    private let token: String = "1b0a50062f5ef437b726828d2c0906866878a566"
+    
 
     // Configure the network transport to use the singleton as the delegate.
     private lazy var networkTransport: HTTPNetworkTransport = {

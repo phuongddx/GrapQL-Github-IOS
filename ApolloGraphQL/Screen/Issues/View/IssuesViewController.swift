@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import ObjectMapper
 import Apollo
+import RealmSwift
 
 class IssuesViewController: UIViewController {
     
@@ -19,14 +20,22 @@ class IssuesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    private var issueList: [IssueNodeModel] = []
+    var presenter: IssuesPresenterProtocol?
+    private var issueList: IssueList! {
+        get {
+            return presenter?.issueList
+        }
+    }
     
     private let refreshControl: UIRefreshControl = UIRefreshControl.init()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loaddata()
+        if let presenter = presenter {
+            presenter.viewDidLoad()
+        }
         
         refreshControl.tintColor = .darkGray
         tableView.addSubview(refreshControl)
@@ -51,12 +60,18 @@ class IssuesViewController: UIViewController {
             print("error")
         }
     }
+}
+
+extension IssuesViewController: IssuesViewProtocol {
+    func updateView() {
+        tableView.reloadData()
+    }
     
-    private func beginLoading() {
+    func beginLoading() {
         refreshControl.beginRefreshing()
     }
     
-    private func endLoading() {
+    func endLoading() {
         refreshControl.endRefreshing()
     }
 }
@@ -80,70 +95,5 @@ extension IssuesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let issue = issueList[indexPath.row]
-    }
-}
-
-extension IssuesViewController {
-    private func loaddata() {
-        let ownerStr: String = "phuongdateh"
-        let nameRepo: String = "GrapQL-Github-IOS"
-        beginLoading()
-        loadListIssue(owner: ownerStr, nameRepo: nameRepo)
-    }
-    
-    private func updateView() {
-        tableView.reloadData()
-        debugPrint(issueList[0])
-    }
-    
-    private func loadListIssue(owner: String, nameRepo: String) {
-        let query = ListIssueQuery.init(owner: owner, name: nameRepo, numberIssue: 100, states: [IssueState.open])
-        apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData, context: nil, queue: .main) { [weak self] (results) in
-            switch results {
-            case .success(let results):
-                if let data = results.data {
-                    if let data = try? JSONSerialization.data(withJSONObject: data.jsonObject, options: []) {
-                        do {
-                            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                                let repository = json["repository"] as? [String: Any],
-                                let issues = repository["issues"] as? [String: Any],
-                                let edges = issues["edges"] as? [[String: Any]] {
-                                print("edges: \(edges[0])")
-                                for edge in edges {
-                                    let map = Map.init(mappingType: .fromJSON, JSON: edge)
-                                    if let issueModel = IssueModel.init(map: map) {
-                                        issueModel.mapping(map: map)
-                                        if let node = issueModel.node {
-                                            if let weakSelf = self {
-                                                weakSelf.issueList.append(node)
-                                            }
-                                        }
-                                    }
-                                }
-                                
-                            }
-                        }
-                        catch let error {
-                            print("error: \(error.localizedDescription)")
-                        }
-                    }
-                    else {
-                        print("json fail")
-                    }
-                }
-                else {
-                    print("pasre error")
-                }
-                if let weakSelf = self {
-                    weakSelf.endLoading()
-                    weakSelf.updateView()
-                }
-            case .failure(let error):
-                if let weakSelf = self {
-                    weakSelf.endLoading()
-                }
-                print("error: \(error.localizedDescription)")
-            }
-        }
     }
 }

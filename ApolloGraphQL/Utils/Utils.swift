@@ -21,7 +21,6 @@ public final class Utils {
         return viewController as? UIViewController
     }
     
-    
     class func storyboardBoardWithName(_ storyboardName: String) -> UIStoryboard {
         let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
         return storyboard

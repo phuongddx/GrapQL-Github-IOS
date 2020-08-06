@@ -19,7 +19,7 @@ class IssuesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    private var issueList: [IssuseNodeModel] = []
+    private var issueList: [IssueNodeModel] = []
     
     private let refreshControl: UIRefreshControl = UIRefreshControl.init()
     

@@ -23,7 +23,7 @@ class IssuesTableViewCell: UITableViewCell {
     @IBOutlet weak var createAtLb: UILabel!
     
     
-    private var issue: IssuseNodeModel?
+    private var issue: IssueNodeModel?
     private var indexRow: Int = -1
     
     
@@ -36,7 +36,7 @@ class IssuesTableViewCell: UITableViewCell {
         
     }
     
-    func setupData(issue: IssuseNodeModel,_ index: Int) {
+    func setupData(issue: IssueNodeModel,_ index: Int) {
         self.issue = issue
         self.indexRow = index
         didSetIssue()

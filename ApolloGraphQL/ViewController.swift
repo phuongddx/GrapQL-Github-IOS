@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         openLoginVC()
     }
     
-    private var issueNode: [IssuseNodeModel] = []
+    private var issueNode: [IssueNodeModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

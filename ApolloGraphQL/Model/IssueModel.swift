@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class IssueModel: Mappable {
-    var node: IssuseNodeModel?
+    var node: IssueNodeModel?
     
     required convenience init?(map: Map) {
         self.init()
@@ -21,7 +21,7 @@ class IssueModel: Mappable {
     }
 }
 
-class IssuseNodeModel: Mappable {
+class IssueNodeModel: Mappable {
     var createdAt: String?
     var state: String?
     var title: String?
@@ -49,7 +49,7 @@ class IssuseNodeModel: Mappable {
     }
 }
 
-extension IssuseNodeModel {
+extension IssueNodeModel {
     func getAuthorName() -> String {
         if let author = author, let username = author.username, username.count > 0 {
             return username

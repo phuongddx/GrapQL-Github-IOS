@@ -24,6 +24,16 @@
 		BC5ED41D24D7EF6B0082147A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED41B24D7EF6B0082147A /* Main.storyboard */; };
 		BC5ED41F24D7EF6D0082147A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED41E24D7EF6D0082147A /* Assets.xcassets */; };
 		BC5ED42224D7EF6D0082147A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED42024D7EF6D0082147A /* LaunchScreen.storyboard */; };
+		BCD593EA24DB1573007E155A /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD593E924DB1573007E155A /* IssueDetailViewController.swift */; };
+		BCD593EC24DB15CE007E155A /* IssueDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD593EB24DB15CE007E155A /* IssueDetail.storyboard */; };
+		BCD593F224DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD593F124DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift */; };
+		BCD593F424DBACB7007E155A /* IssueDetailTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD593F324DBACB7007E155A /* IssueDetailTableViewHeaderView.xib */; };
+		BCD593F724DBB0A2007E155A /* IssueDetailTableViewFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD593F624DBB0A2007E155A /* IssueDetailTableViewFooterView.swift */; };
+		BCD593F924DBB0D8007E155A /* IssueDetailTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD593F824DBB0D8007E155A /* IssueDetailTableViewFooterView.xib */; };
+		BCD593FE24DBB184007E155A /* IssueCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD593FD24DBB184007E155A /* IssueCommentTableViewCell.swift */; };
+		BCD5940024DBB1B1007E155A /* IssueCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD593FF24DBB1B1007E155A /* IssueCommentTableViewCell.xib */; };
+		BCD5940324DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5940224DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift */; };
+		BCD5940524DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD5940424DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +57,16 @@
 		BC5ED41E24D7EF6D0082147A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC5ED42124D7EF6D0082147A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC5ED42324D7EF6D0082147A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCD593E924DB1573007E155A /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
+		BCD593EB24DB15CE007E155A /* IssueDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueDetail.storyboard; sourceTree = "<group>"; };
+		BCD593F124DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailTableViewHeaderView.swift; sourceTree = "<group>"; };
+		BCD593F324DBACB7007E155A /* IssueDetailTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailTableViewHeaderView.xib; sourceTree = "<group>"; };
+		BCD593F624DBB0A2007E155A /* IssueDetailTableViewFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailTableViewFooterView.swift; sourceTree = "<group>"; };
+		BCD593F824DBB0D8007E155A /* IssueDetailTableViewFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailTableViewFooterView.xib; sourceTree = "<group>"; };
+		BCD593FD24DBB184007E155A /* IssueCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCommentTableViewCell.swift; sourceTree = "<group>"; };
+		BCD593FF24DBB1B1007E155A /* IssueCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueCommentTableViewCell.xib; sourceTree = "<group>"; };
+		BCD5940224DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		BCD5940424DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +110,7 @@
 		BC225CC724D9D68400E2D68A /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BCD593E824DB1564007E155A /* IssueDetail */,
 				BC225CD024D9DA8B00E2D68A /* Issues */,
 				BC225CC824D9D69400E2D68A /* Login */,
 			);
@@ -185,6 +206,79 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		BCD593E824DB1564007E155A /* IssueDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BCD593FA24DBB13A007E155A /* SubView */,
+				BCD593ED24DBAC30007E155A /* View */,
+			);
+			path = IssueDetail;
+			sourceTree = "<group>";
+		};
+		BCD593ED24DBAC30007E155A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCD593E924DB1573007E155A /* IssueDetailViewController.swift */,
+				BCD593EB24DB15CE007E155A /* IssueDetail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCD593EE24DBAC3D007E155A /* IssueDetailTableViewHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				BCD593F124DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift */,
+				BCD593F324DBACB7007E155A /* IssueDetailTableViewHeaderView.xib */,
+			);
+			path = IssueDetailTableViewHeaderView;
+			sourceTree = "<group>";
+		};
+		BCD593F524DBB08D007E155A /* IssueDetailTableViewFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				BCD593F624DBB0A2007E155A /* IssueDetailTableViewFooterView.swift */,
+				BCD593F824DBB0D8007E155A /* IssueDetailTableViewFooterView.xib */,
+			);
+			path = IssueDetailTableViewFooterView;
+			sourceTree = "<group>";
+		};
+		BCD593FA24DBB13A007E155A /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				BCD593FB24DBB144007E155A /* Cell */,
+				BCD593F524DBB08D007E155A /* IssueDetailTableViewFooterView */,
+				BCD593EE24DBAC3D007E155A /* IssueDetailTableViewHeaderView */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		BCD593FB24DBB144007E155A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCD5940124DBB5F2007E155A /* IssueDetailHeaderTableViewCell */,
+				BCD593FC24DBB148007E155A /* IssueCommentTableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BCD593FC24DBB148007E155A /* IssueCommentTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BCD593FD24DBB184007E155A /* IssueCommentTableViewCell.swift */,
+				BCD593FF24DBB1B1007E155A /* IssueCommentTableViewCell.xib */,
+			);
+			path = IssueCommentTableViewCell;
+			sourceTree = "<group>";
+		};
+		BCD5940124DBB5F2007E155A /* IssueDetailHeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BCD5940224DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift */,
+				BCD5940424DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib */,
+			);
+			path = IssueDetailHeaderTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,9 +343,14 @@
 				BC225CCF24D9D7C400E2D68A /* Login.storyboard in Resources */,
 				BC225CD424D9DAD600E2D68A /* Issues.storyboard in Resources */,
 				BC5ED42224D7EF6D0082147A /* LaunchScreen.storyboard in Resources */,
+				BCD5940024DBB1B1007E155A /* IssueCommentTableViewCell.xib in Resources */,
+				BCD593EC24DB15CE007E155A /* IssueDetail.storyboard in Resources */,
+				BCD5940524DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib in Resources */,
 				BC5ED41F24D7EF6D0082147A /* Assets.xcassets in Resources */,
 				BC5ED41D24D7EF6B0082147A /* Main.storyboard in Resources */,
+				BCD593F424DBACB7007E155A /* IssueDetailTableViewHeaderView.xib in Resources */,
 				BC225CDA24D9DDD400E2D68A /* IssuesTableViewCell.xib in Resources */,
+				BCD593F924DBB0D8007E155A /* IssueDetailTableViewFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +422,9 @@
 			files = (
 				BC225CCA24D9D6C900E2D68A /* LoginViewController.swift in Sources */,
 				BC225CD824D9DDA200E2D68A /* IssuesTableViewCell.swift in Sources */,
+				BCD593F224DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift in Sources */,
+				BCD593FE24DBB184007E155A /* IssueCommentTableViewCell.swift in Sources */,
+				BCD593EA24DB1573007E155A /* IssueDetailViewController.swift in Sources */,
 				BC5ED41A24D7EF6B0082147A /* ViewController.swift in Sources */,
 				BC225CC324D8927600E2D68A /* Networkl.swift in Sources */,
 				BC225CD224D9DA9B00E2D68A /* IssuesViewController.swift in Sources */,
@@ -330,7 +432,9 @@
 				BC225CC624D9D26600E2D68A /* IssueModel.swift in Sources */,
 				BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */,
 				BC225CC124D88DA400E2D68A /* API.swift in Sources */,
+				BCD593F724DBB0A2007E155A /* IssueDetailTableViewFooterView.swift in Sources */,
 				BC225CCD24D9D71700E2D68A /* Utils.swift in Sources */,
+				BCD5940324DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

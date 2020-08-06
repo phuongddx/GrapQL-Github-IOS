@@ -1,17 +1,18 @@
-query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [IssueState!]){
+query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [IssueState!]) {
   repository(owner: $owner, name: $name) {
     issues(last: $numberIssue, states: $states) {
       edges {
         node {
-          assignees(last: 100) { 
-          	totalCount
-            edges { 
-              node { 
-              	name
+          assignees(last: 100) {
+            totalCount
+            edges {
+              node {
+                name
                 id
                 avatarUrl
                 resourcePath
-              	url
+                url
+                login
                 avatarUrl
               }
             }
@@ -21,49 +22,59 @@ query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [I
           updatedAt
           milestone {
             state
-        		title
+            title
             createdAt
-            creator { 
-            	login
-            	avatarUrl
+            creator {
+              login
+              avatarUrl
               url
             }
           }
           author {
+            avatarUrl
+            url
             login
+            resourcePath
           }
-          participants(last: 100) { 
+          participants(last: 100) {
             totalCount
-          	nodes { 
-              createdAt
-          		login
-              updatedAt
+            edges {
+              node {
+                id
+                login
+                url
+                avatarUrl
+                resourcePath
+                updatedAt
+                createdAt
+              }
             }
           }
           state
           title
           url
-        	comments(last: 10) {
+          comments(last: 100) {
             totalCount
-          	edges {
+            edges {
               node {
-                author { 
-                	login
+                author {
+                  login
                   avatarUrl
                   resourcePath
+                  url
                 }
                 bodyText
               }
             }
           }
-          labels(last:10) {
-            edges {
-              node {
-              	description
-              	createdAt
-                name
-              	id
-              }
+          labels(last: 100) {
+            totalCount
+            nodes {
+              description
+              createdAt
+              name
+              color
+              id
             }
           }
         }

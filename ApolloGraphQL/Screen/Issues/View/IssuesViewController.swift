@@ -89,6 +89,7 @@ extension IssuesViewController {
     
     private func updateView() {
         tableView.reloadData()
+        debugPrint(issueList[0])
     }
     
     private func loadListIssue(owner: String, nameRepo: String) {

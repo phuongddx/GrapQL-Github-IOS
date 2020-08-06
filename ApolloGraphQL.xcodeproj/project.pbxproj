@@ -46,6 +46,7 @@
 		BCF5F40B24DBF532002C2B53 /* IssueParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F40A24DBF532002C2B53 /* IssueParticipantsModel.swift */; };
 		BCF5F40E24DBFB1C002C2B53 /* IssueLabelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F40D24DBFB1C002C2B53 /* IssueLabelsModel.swift */; };
 		BCF5F41024DBFD31002C2B53 /* IssueLabelsDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F40F24DBFD31002C2B53 /* IssueLabelsDetailModel.swift */; };
+		BCF5F41224DC10EC002C2B53 /* IssueParticipantsNodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41124DC10EC002C2B53 /* IssueParticipantsNodeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		BCF5F40A24DBF532002C2B53 /* IssueParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueParticipantsModel.swift; sourceTree = "<group>"; };
 		BCF5F40D24DBFB1C002C2B53 /* IssueLabelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueLabelsModel.swift; sourceTree = "<group>"; };
 		BCF5F40F24DBFD31002C2B53 /* IssueLabelsDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueLabelsDetailModel.swift; sourceTree = "<group>"; };
+		BCF5F41124DC10EC002C2B53 /* IssueParticipantsNodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueParticipantsNodeModel.swift; sourceTree = "<group>"; };
 		ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF5F40A24DBF532002C2B53 /* IssueParticipantsModel.swift */,
+				BCF5F41124DC10EC002C2B53 /* IssueParticipantsNodeModel.swift */,
 			);
 			path = Participants;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				BC5ED41A24D7EF6B0082147A /* ViewController.swift in Sources */,
 				BC225CC324D8927600E2D68A /* Networkl.swift in Sources */,
 				BCF5F40B24DBF532002C2B53 /* IssueParticipantsModel.swift in Sources */,
+				BCF5F41224DC10EC002C2B53 /* IssueParticipantsNodeModel.swift in Sources */,
 				BC225CD224D9DA9B00E2D68A /* IssuesViewController.swift in Sources */,
 				BCF5F40E24DBFB1C002C2B53 /* IssueLabelsModel.swift in Sources */,
 				BCE2630224DBEB3100DAF90C /* IssueCommentNodeModel.swift in Sources */,

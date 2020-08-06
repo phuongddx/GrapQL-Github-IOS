@@ -22,9 +22,12 @@ class IssueAssigneesModel: Mappable {
         if let edges = map.JSON["edges"] as? [[String: Any]] {
             for edge in edges {
                 let map = Map.init(mappingType: .fromJSON, JSON: edge)
-                if let assignees = PersonModel.init(map: map) {
-                    assignees.mapping(map: map)
-                    self.assigneesList.append(assignees)
+                if let node = IssueAssigneesNodeModel.init(map: map) {
+                    node.mapping(map: map)
+                    if let assignees = node.node{
+                        assignees.mapping(map: map)
+                        self.assigneesList.append(assignees)
+                    }
                 }
             }
         }

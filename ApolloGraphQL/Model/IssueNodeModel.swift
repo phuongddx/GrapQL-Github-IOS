@@ -20,6 +20,7 @@ class IssueNodeModel: Mappable {
     var assignees: IssueAssigneesModel?
     var milestone: IssueMilestoneModel?
     var labels: IssueLabelsModel?
+    var participant: IssueParticipantsModel?
     
     required convenience init?(map: Map) {
         self.init()
@@ -44,6 +45,7 @@ class IssueNodeModel: Mappable {
         assignees <- map["assignees"]
         milestone <- map["milestone"]
         labels <- map["labels"]
+        participant <- map["participants"]
     }
 }
 

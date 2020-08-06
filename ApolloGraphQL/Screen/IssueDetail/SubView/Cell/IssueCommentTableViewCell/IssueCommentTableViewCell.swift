@@ -14,6 +14,8 @@ class IssueCommentTableViewCell: UITableViewCell {
         return "IssueCommentTableViewCell"
     }
     
+    private var comment: IssueCommentNodeDetailModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

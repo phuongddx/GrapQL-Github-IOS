@@ -57,6 +57,11 @@ query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [I
             totalCount
             edges {
               node {
+                updatedAt
+                createdAt
+              	url
+                id
+                resourcePath
                 author {
                   login
                   avatarUrl

@@ -8,13 +8,18 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class PersonModel: Mappable {
-    var id: String?
-    var username: String?
-    var resourcePath: String?
-    var url: String?
-    var avatarUrl: String?
+class PersonModel: Object, Mappable {
+    @objc dynamic var id: String?
+    @objc dynamic var username: String?
+    @objc dynamic var resourcePath: String?
+    @objc dynamic var url: String?
+    @objc dynamic var avatarUrl: String?
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
     required convenience init?(map: Map) {
         self.init()

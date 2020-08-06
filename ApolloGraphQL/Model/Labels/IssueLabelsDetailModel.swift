@@ -8,13 +8,18 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class IssueLabelsDetailModel: Mappable {
-    var id: String?
-    var color: String?
-    var createdAt: String?
-    var description: String?
-    var name: String?
+class IssueLabelsDetailModel: Object, Mappable {
+    @objc dynamic var id: String?
+    @objc dynamic var color: String?
+    @objc dynamic var createdAt: String?
+    @objc dynamic var desc: String?
+    @objc dynamic var name: String?
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
     required convenience init?(map: Map) {
         self.init()
@@ -26,7 +31,7 @@ class IssueLabelsDetailModel: Mappable {
     func mapping(map: Map) {
         color <- map["color"]
         createdAt <- map["createdAt"]
-        description <- map["description"]
+        desc <- map["description"]
         name <- map["name"]
     }
 }

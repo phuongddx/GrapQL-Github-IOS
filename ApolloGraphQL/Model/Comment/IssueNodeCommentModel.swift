@@ -8,10 +8,11 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class IssueNodeCommentModel: Mappable {
-    var totalCount: Int = -1
-    var nodeDetailList: [IssueCommentNodeDetailModel] = []
+class IssueNodeCommentModel: Object, Mappable {
+    @objc dynamic var totalCount: Int = -1
+    let nodeDetailList = List<IssueCommentNodeDetailModel>()
     
     required convenience init?(map: Map) {
         self.init()

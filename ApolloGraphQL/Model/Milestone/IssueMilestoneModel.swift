@@ -8,12 +8,13 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class IssueMilestoneModel: Mappable {
-    var state: String?
-    var title: String?
-    var createdAt: String?
-    var creator: PersonModel?
+class IssueMilestoneModel: Object, Mappable {
+    @objc dynamic var state: String?
+    @objc dynamic var title: String?
+    @objc dynamic var createdAt: String?
+    @objc dynamic var creator: PersonModel?
     
     required convenience init?(map: Map) {
         self.init()

@@ -77,6 +77,10 @@ extension IssuesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setupData(issue: issueList[indexPath.row], indexPath.row)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let issue = issueList[indexPath.row]
+    }
 }
 
 extension IssuesViewController {

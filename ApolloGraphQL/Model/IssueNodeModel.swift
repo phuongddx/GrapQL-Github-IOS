@@ -63,4 +63,18 @@ extension IssueNodeModel {
         }
         return 0
     }
+    
+    func getCountParticipant() -> Int {
+        if let participant = participant {
+            return participant.totalCount
+        }
+        return 0
+    }
+    
+    func getTitle() -> String {
+        if let title = title, title.count > 0 {
+            return title
+        }
+        return ""
+    }
 }

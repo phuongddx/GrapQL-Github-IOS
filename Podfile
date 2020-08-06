@@ -7,5 +7,6 @@ target 'ApolloGraphQL' do
 
   # Pods for ApolloGraphQL
   pod "Apollo"
+  pod 'RealmSwift'
   pod 'ObjectMapper', '~> 3.5'
 end

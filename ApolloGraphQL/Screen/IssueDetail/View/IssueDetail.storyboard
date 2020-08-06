@@ -158,6 +158,14 @@
                             <constraint firstItem="bAp-Rb-eym" firstAttribute="top" secondItem="rUt-jR-X1l" secondAttribute="bottom" id="lub-iB-O6x"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="4hD-ti-3nd" id="gHn-50-Ou7"/>
+                        <outlet property="countCommentLb" destination="b3W-MI-HSf" id="jXa-Yo-cJY"/>
+                        <outlet property="countParticipantLb" destination="IXg-4R-sGW" id="1Zr-f6-xhW"/>
+                        <outlet property="tableView" destination="Vc2-7t-rRE" id="Gmf-S4-enE"/>
+                        <outlet property="titleLb" destination="xcY-7b-Rmg" id="iSY-jt-S20"/>
+                        <outlet property="updateTimeLb" destination="Y6q-Pb-j6V" id="ZND-mJ-mCC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gfy-ej-4BW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

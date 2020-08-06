@@ -47,6 +47,12 @@
 		BCF5F40E24DBFB1C002C2B53 /* IssueLabelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F40D24DBFB1C002C2B53 /* IssueLabelsModel.swift */; };
 		BCF5F41024DBFD31002C2B53 /* IssueLabelsDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F40F24DBFD31002C2B53 /* IssueLabelsDetailModel.swift */; };
 		BCF5F41224DC10EC002C2B53 /* IssueParticipantsNodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41124DC10EC002C2B53 /* IssueParticipantsNodeModel.swift */; };
+		BCF5F41424DC1B85002C2B53 /* IssueDetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41324DC1B85002C2B53 /* IssueDetailViewProtocol.swift */; };
+		BCF5F41724DC2FE3002C2B53 /* IssueDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41624DC2FE3002C2B53 /* IssueDetailPresenterProtocol.swift */; };
+		BCF5F41924DC3BBE002C2B53 /* IssueDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41824DC3BBE002C2B53 /* IssueDetailPresenter.swift */; };
+		BCF5F41C24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41B24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift */; };
+		BCF5F41E24DC57B9002C2B53 /* IssueDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41D24DC57B9002C2B53 /* IssueDetailWireFrame.swift */; };
+		BCF5F42124DC5BB9002C2B53 /* IssuesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42024DC5BB9002C2B53 /* IssuesPresenterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +99,12 @@
 		BCF5F40D24DBFB1C002C2B53 /* IssueLabelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueLabelsModel.swift; sourceTree = "<group>"; };
 		BCF5F40F24DBFD31002C2B53 /* IssueLabelsDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueLabelsDetailModel.swift; sourceTree = "<group>"; };
 		BCF5F41124DC10EC002C2B53 /* IssueParticipantsNodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueParticipantsNodeModel.swift; sourceTree = "<group>"; };
+		BCF5F41324DC1B85002C2B53 /* IssueDetailViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewProtocol.swift; sourceTree = "<group>"; };
+		BCF5F41624DC2FE3002C2B53 /* IssueDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailPresenterProtocol.swift; sourceTree = "<group>"; };
+		BCF5F41824DC3BBE002C2B53 /* IssueDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailPresenter.swift; sourceTree = "<group>"; };
+		BCF5F41B24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailWireFrameProtocol.swift; sourceTree = "<group>"; };
+		BCF5F41D24DC57B9002C2B53 /* IssueDetailWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailWireFrame.swift; sourceTree = "<group>"; };
+		BCF5F42024DC5BB9002C2B53 /* IssuesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesPresenterProtocol.swift; sourceTree = "<group>"; };
 		ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,6 +182,7 @@
 		BC225CD024D9DA8B00E2D68A /* Issues */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F41F24DC5B3F002C2B53 /* Presenter */,
 				BC225CD624D9DD8E00E2D68A /* IssuesTableViewCell */,
 				BC225CD524D9DD8300E2D68A /* View */,
 			);
@@ -243,7 +256,8 @@
 		BCD593E824DB1564007E155A /* IssueDetail */ = {
 			isa = PBXGroup;
 			children = (
-				BCD593FA24DBB13A007E155A /* SubView */,
+				BCF5F41A24DC3BF3002C2B53 /* WireFrame */,
+				BCF5F41524DC2FCD002C2B53 /* Presenter */,
 				BCD593ED24DBAC30007E155A /* View */,
 			);
 			path = IssueDetail;
@@ -252,8 +266,10 @@
 		BCD593ED24DBAC30007E155A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCD593FA24DBB13A007E155A /* SubView */,
 				BCD593E924DB1573007E155A /* IssueDetailViewController.swift */,
 				BCD593EB24DB15CE007E155A /* IssueDetail.storyboard */,
+				BCF5F41324DC1B85002C2B53 /* IssueDetailViewProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +380,32 @@
 				BCF5F40F24DBFD31002C2B53 /* IssueLabelsDetailModel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		BCF5F41524DC2FCD002C2B53 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F41624DC2FE3002C2B53 /* IssueDetailPresenterProtocol.swift */,
+				BCF5F41824DC3BBE002C2B53 /* IssueDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BCF5F41A24DC3BF3002C2B53 /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F41B24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift */,
+				BCF5F41D24DC57B9002C2B53 /* IssueDetailWireFrame.swift */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		BCF5F41F24DC5B3F002C2B53 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F42024DC5BB9002C2B53 /* IssuesPresenterProtocol.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC225CCA24D9D6C900E2D68A /* LoginViewController.swift in Sources */,
+				BCF5F41C24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift in Sources */,
 				BC225CD824D9DDA200E2D68A /* IssuesTableViewCell.swift in Sources */,
 				BCE2630824DBECEA00DAF90C /* PersonModel.swift in Sources */,
 				BCF5F41024DBFD31002C2B53 /* IssueLabelsDetailModel.swift in Sources */,
@@ -518,6 +561,7 @@
 				BC225CC324D8927600E2D68A /* Networkl.swift in Sources */,
 				BCF5F40B24DBF532002C2B53 /* IssueParticipantsModel.swift in Sources */,
 				BCF5F41224DC10EC002C2B53 /* IssueParticipantsNodeModel.swift in Sources */,
+				BCF5F42124DC5BB9002C2B53 /* IssuesPresenterProtocol.swift in Sources */,
 				BC225CD224D9DA9B00E2D68A /* IssuesViewController.swift in Sources */,
 				BCF5F40E24DBFB1C002C2B53 /* IssueLabelsModel.swift in Sources */,
 				BCE2630224DBEB3100DAF90C /* IssueCommentNodeModel.swift in Sources */,
@@ -526,6 +570,7 @@
 				BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */,
 				BCE2630524DBEB5D00DAF90C /* IssueCommentNodeDetailModel.swift in Sources */,
 				BCF5F40824DBF3AB002C2B53 /* IssueMilestoneModel.swift in Sources */,
+				BCF5F41E24DC57B9002C2B53 /* IssueDetailWireFrame.swift in Sources */,
 				BCE262F924DBE68900DAF90C /* PersonalAccessToken.swift in Sources */,
 				BCE262FC24DBEAB700DAF90C /* IssueNodeModel.swift in Sources */,
 				BCE2630024DBEB1200DAF90C /* IssueNodeCommentModel.swift in Sources */,
@@ -533,8 +578,11 @@
 				BCF5F40524DBF1E7002C2B53 /* IssueAssigneesNodeModel.swift in Sources */,
 				BCD593F724DBB0A2007E155A /* IssueDetailTableViewFooterView.swift in Sources */,
 				BC225CCD24D9D71700E2D68A /* Utils.swift in Sources */,
+				BCF5F41424DC1B85002C2B53 /* IssueDetailViewProtocol.swift in Sources */,
+				BCF5F41924DC3BBE002C2B53 /* IssueDetailPresenter.swift in Sources */,
 				BCF5F40324DBEE5A002C2B53 /* IssueAssigneesModel.swift in Sources */,
 				BCD5940324DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift in Sources */,
+				BCF5F41724DC2FE3002C2B53 /* IssueDetailPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

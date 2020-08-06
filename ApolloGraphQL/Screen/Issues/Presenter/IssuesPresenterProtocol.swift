@@ -17,4 +17,5 @@ protocol IssuesPresenterProtocol: class {
     var issueList: Results<IssueNodeModel>! { get set }
     
     func viewDidLoad()
+    func pushIssueDetail(issueId: String)
 }

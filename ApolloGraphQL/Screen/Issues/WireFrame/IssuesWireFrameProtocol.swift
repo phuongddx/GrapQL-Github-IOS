@@ -10,4 +10,5 @@ import Foundation
 
 protocol IssuesWireFrameProtocol: class {
     static func createIssuesViewController() -> IssuesViewController?
+    func pushIssueDetail(_ issueId: String, from view: IssuesViewProtocol)
 }

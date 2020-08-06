@@ -64,6 +64,10 @@
 		BCF5F43824DC683E002C2B53 /* IssuesWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43724DC683E002C2B53 /* IssuesWireFrameProtocol.swift */; };
 		BCF5F43A24DC6860002C2B53 /* IssuesWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43924DC6860002C2B53 /* IssuesWireFrame.swift */; };
 		BCF5F43D24DC6B8C002C2B53 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43C24DC6B8C002C2B53 /* Realm.swift */; };
+		BCF5F44024DC70AD002C2B53 /* IssueDetailInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43F24DC70AD002C2B53 /* IssueDetailInteractorProtocol.swift */; };
+		BCF5F44224DC7199002C2B53 /* IssueDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F44124DC7199002C2B53 /* IssueDetailInteractor.swift */; };
+		BCF5F44724DC7300002C2B53 /* IssueDetailLocalDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F44624DC7300002C2B53 /* IssueDetailLocalDataManagerProtocol.swift */; };
+		BCF5F44924DC732C002C2B53 /* IssueDetailLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F44824DC732C002C2B53 /* IssueDetailLocalDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +131,10 @@
 		BCF5F43724DC683E002C2B53 /* IssuesWireFrameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesWireFrameProtocol.swift; sourceTree = "<group>"; };
 		BCF5F43924DC6860002C2B53 /* IssuesWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesWireFrame.swift; sourceTree = "<group>"; };
 		BCF5F43C24DC6B8C002C2B53 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		BCF5F43F24DC70AD002C2B53 /* IssueDetailInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailInteractorProtocol.swift; sourceTree = "<group>"; };
+		BCF5F44124DC7199002C2B53 /* IssueDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailInteractor.swift; sourceTree = "<group>"; };
+		BCF5F44624DC7300002C2B53 /* IssueDetailLocalDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailLocalDataManagerProtocol.swift; sourceTree = "<group>"; };
+		BCF5F44824DC732C002C2B53 /* IssueDetailLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailLocalDataManager.swift; sourceTree = "<group>"; };
 		ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -283,6 +291,8 @@
 		BCD593E824DB1564007E155A /* IssueDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F44324DC72D2002C2B53 /* Data */,
+				BCF5F43E24DC709D002C2B53 /* Interactor */,
 				BCF5F41A24DC3BF3002C2B53 /* WireFrame */,
 				BCF5F41524DC2FCD002C2B53 /* Presenter */,
 				BCD593ED24DBAC30007E155A /* View */,
@@ -489,6 +499,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		BCF5F43E24DC709D002C2B53 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F43F24DC70AD002C2B53 /* IssueDetailInteractorProtocol.swift */,
+				BCF5F44124DC7199002C2B53 /* IssueDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BCF5F44324DC72D2002C2B53 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F44624DC7300002C2B53 /* IssueDetailLocalDataManagerProtocol.swift */,
+				BCF5F44824DC732C002C2B53 /* IssueDetailLocalDataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -635,6 +663,8 @@
 				BC225CD824D9DDA200E2D68A /* IssuesTableViewCell.swift in Sources */,
 				BCE2630824DBECEA00DAF90C /* PersonModel.swift in Sources */,
 				BCF5F41024DBFD31002C2B53 /* IssueLabelsDetailModel.swift in Sources */,
+				BCF5F44024DC70AD002C2B53 /* IssueDetailInteractorProtocol.swift in Sources */,
+				BCF5F44224DC7199002C2B53 /* IssueDetailInteractor.swift in Sources */,
 				BCD593F224DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift in Sources */,
 				BCD593FE24DBB184007E155A /* IssueCommentTableViewCell.swift in Sources */,
 				BCD593EA24DB1573007E155A /* IssueDetailViewController.swift in Sources */,
@@ -646,6 +676,7 @@
 				BCF5F42A24DC6457002C2B53 /* IssuesInteractor.swift in Sources */,
 				BCF5F42124DC5BB9002C2B53 /* IssuesPresenterProtocol.swift in Sources */,
 				BC225CD224D9DA9B00E2D68A /* IssuesViewController.swift in Sources */,
+				BCF5F44724DC7300002C2B53 /* IssueDetailLocalDataManagerProtocol.swift in Sources */,
 				BCF5F40E24DBFB1C002C2B53 /* IssueLabelsModel.swift in Sources */,
 				BCE2630224DBEB3100DAF90C /* IssueCommentNodeModel.swift in Sources */,
 				BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */,
@@ -656,6 +687,7 @@
 				BCF5F42824DC6314002C2B53 /* IssuesInteractorProtocol.swift in Sources */,
 				BCF5F42E24DC6526002C2B53 /* IssuesLocalDataManagerProtocol.swift in Sources */,
 				BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */,
+				BCF5F44924DC732C002C2B53 /* IssueDetailLocalDataManager.swift in Sources */,
 				BCE2630524DBEB5D00DAF90C /* IssueCommentNodeDetailModel.swift in Sources */,
 				BCF5F40824DBF3AB002C2B53 /* IssueMilestoneModel.swift in Sources */,
 				BCF5F41E24DC57B9002C2B53 /* IssueDetailWireFrame.swift in Sources */,

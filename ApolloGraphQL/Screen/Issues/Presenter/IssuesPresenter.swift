@@ -25,6 +25,12 @@ class IssuesPresenter: IssuesPresenterProtocol {
             interactor.getIssues()
         }
     }
+    
+    func pushIssueDetail(issueId: String) {
+        if let wireFrame = wireFrame, let view = view {
+            wireFrame.pushIssueDetail(issueId, from: view)
+        }
+    }
 }
 extension IssuesPresenter: IssuesInteractorOutputProtocol {
     func didInitIssues(_ issues: Results<IssueNodeModel>) {

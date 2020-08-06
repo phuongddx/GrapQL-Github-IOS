@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IssueDetailWireFrameProtocol: class {
-    static func createIssueDetailViewController(_ issue: IssueNodeModel) -> IssueDetailViewController?
+    static func createIssueDetailViewController(_ issueId: String) -> IssueDetailViewController?
 }

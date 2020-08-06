@@ -3,20 +3,47 @@ query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [I
     issues(last: $numberIssue, states: $states) {
       edges {
         node {
+          assignees(last: 100) { 
+          	totalCount
+            edges { 
+              node { 
+              	name
+                id
+                avatarUrl
+                resourcePath
+              	url
+                avatarUrl
+              }
+            }
+          }
+          id
           createdAt
+          updatedAt
+          milestone {
+            state
+        		title
+            createdAt
+            creator { 
+            	login
+            	avatarUrl
+              url
+            }
+          }
           author {
             login
           }
-          participants(first: 10) { 
+          participants(last: 100) { 
+            totalCount
           	nodes { 
               createdAt
           		login
+              updatedAt
             }
           }
           state
           title
           url
-        	comments(first: 10) {
+        	comments(last: 10) {
             totalCount
           	edges {
               node {
@@ -29,11 +56,13 @@ query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [I
               }
             }
           }
-          labels(first:5) {
+          labels(last:10) {
             edges {
               node {
+              	description
               	createdAt
                 name
+              	id
               }
             }
           }

@@ -92,7 +92,7 @@ extension IssuesViewController {
     }
     
     private func loadListIssue(owner: String, nameRepo: String) {
-        let query = ListIssueQuery.init(owner: owner, name: nameRepo, numberIssue: 100, states: [IssueState.closed])
+        let query = ListIssueQuery.init(owner: owner, name: nameRepo, numberIssue: 100, states: [IssueState.open])
         apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData, context: nil, queue: .main) { [weak self] (results) in
             switch results {
             case .success(let results):
@@ -103,6 +103,7 @@ extension IssuesViewController {
                                 let repository = json["repository"] as? [String: Any],
                                 let issues = repository["issues"] as? [String: Any],
                                 let edges = issues["edges"] as? [[String: Any]] {
+                                print("edges: \(edges[0])")
                                 for edge in edges {
                                     let map = Map.init(mappingType: .fromJSON, JSON: edge)
                                     if let issueModel = IssueModel.init(map: map) {

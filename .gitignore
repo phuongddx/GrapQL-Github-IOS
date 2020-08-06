@@ -52,6 +52,8 @@ playground.xcworkspace
 Pods/
 *.xcworkspace
 
+ApolloGraphQL/PersonalAccessToken/PersonalAccessToken.swift
+
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
@@ -81,3 +83,4 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+

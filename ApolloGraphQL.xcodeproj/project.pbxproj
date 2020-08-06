@@ -34,6 +34,7 @@
 		BCD5940024DBB1B1007E155A /* IssueCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD593FF24DBB1B1007E155A /* IssueCommentTableViewCell.xib */; };
 		BCD5940324DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5940224DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift */; };
 		BCD5940524DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD5940424DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib */; };
+		BCE262F924DBE68900DAF90C /* PersonalAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE262F824DBE68900DAF90C /* PersonalAccessToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		BCD593FF24DBB1B1007E155A /* IssueCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueCommentTableViewCell.xib; sourceTree = "<group>"; };
 		BCD5940224DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		BCD5940424DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		BCE262F824DBE68900DAF90C /* PersonalAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccessToken.swift; sourceTree = "<group>"; };
 		ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 		BC5ED41424D7EF6B0082147A /* ApolloGraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				BCE262FA24DBE7AB00DAF90C /* PersonalAccessToken */,
 				BC225CC024D88DA400E2D68A /* API.swift */,
 				BC225CC424D9CFD200E2D68A /* Model */,
 				BC5ED42A24D7F1100082147A /* Network */,
@@ -277,6 +280,14 @@
 				BCD5940424DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib */,
 			);
 			path = IssueDetailHeaderTableViewCell;
+			sourceTree = "<group>";
+		};
+		BCE262FA24DBE7AB00DAF90C /* PersonalAccessToken */ = {
+			isa = PBXGroup;
+			children = (
+				BCE262F824DBE68900DAF90C /* PersonalAccessToken.swift */,
+			);
+			path = PersonalAccessToken;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +442,7 @@
 				BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */,
 				BC225CC624D9D26600E2D68A /* IssueModel.swift in Sources */,
 				BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */,
+				BCE262F924DBE68900DAF90C /* PersonalAccessToken.swift in Sources */,
 				BC225CC124D88DA400E2D68A /* API.swift in Sources */,
 				BCD593F724DBB0A2007E155A /* IssueDetailTableViewFooterView.swift in Sources */,
 				BC225CCD24D9D71700E2D68A /* Utils.swift in Sources */,

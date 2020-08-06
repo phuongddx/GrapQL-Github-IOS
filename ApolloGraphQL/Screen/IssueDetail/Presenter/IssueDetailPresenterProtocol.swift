@@ -9,8 +9,10 @@
 protocol IssueDetailPresenterProtocol: class {
     var view: IssueDetailViewProtocol? { get set }
     var wireFrame: IssueDetailWireFrameProtocol? { get set }
+    var interactor: IssueDetailInteractorInputProtocol? { get set }
     
-    var issue: IssueNodeModel? { get set }
+    var issueId: String! { get set }
+    var issueNode: IssueNodeModel? { get set }
 
     func viewDidload()
 }

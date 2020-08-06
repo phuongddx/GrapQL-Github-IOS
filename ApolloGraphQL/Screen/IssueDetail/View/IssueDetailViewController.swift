@@ -25,7 +25,7 @@ class IssueDetailViewController: UIViewController {
     // MARK: - Properties
     private var issueObj: IssueNodeModel? {
         get {
-            return presenter?.issue
+            return presenter?.issueNode
         }
     }
     var presenter: IssueDetailPresenterProtocol?

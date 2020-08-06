@@ -29,4 +29,10 @@ class IssuesWireFrame: IssuesWireFrameProtocol {
         }
         return nil
     }
+    
+    func pushIssueDetail(_ issueId: String, from view: IssuesViewProtocol) {
+        if let vc = IssueDetailWireFrame.createIssueDetailViewController(issueId), let view = view as? IssuesViewController, let navigationController = view.navigationController {
+            navigationController.pushViewController(vc, animated: true)
+        }
+    }
 }

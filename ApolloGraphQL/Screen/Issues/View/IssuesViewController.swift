@@ -95,5 +95,8 @@ extension IssuesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let issue = issueList[indexPath.row]
+        if let presenter = presenter {
+            presenter.pushIssueDetail(issueId: issue.id!)
+        }
     }
 }

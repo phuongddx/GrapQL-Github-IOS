@@ -8,15 +8,20 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class IssueCommentNodeDetailModel: Mappable {
-    var id: String?
-    var author: PersonModel?
-    var bodyText: String?
-    var updatedAt: String?
-    var createdAt: String?
-    var resourcePath: String?
-    var url: String?
+class IssueCommentNodeDetailModel: Object, Mappable {
+    @objc dynamic var id: String?
+    @objc dynamic var author: PersonModel?
+    @objc dynamic var bodyText: String?
+    @objc dynamic var updatedAt: String?
+    @objc dynamic var createdAt: String?
+    @objc dynamic var resourcePath: String?
+    @objc dynamic var url: String?
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
     required convenience init?(map: Map) {
         self.init()

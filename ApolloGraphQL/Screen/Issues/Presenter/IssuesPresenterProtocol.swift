@@ -9,4 +9,12 @@
 import Foundation
 import RealmSwift
 
-
+protocol IssuesPresenterProtocol: class {
+    var view: IssuesViewProtocol? { get set }
+    var wireFrame: IssuesWireFrameProtocol? { get set }
+    var interactor: IssuesInteractorInputProtocol? { get set }
+    
+    var issueList: Results<IssueNodeModel>! { get set }
+    
+    func viewDidLoad()
+}

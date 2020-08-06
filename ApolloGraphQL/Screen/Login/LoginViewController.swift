@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     private func pushIssuesViewController() {
-        if let issueVC = Utils.viewController(IssuesViewController.storyBoardId, storyboardName: IssuesViewController.storyBoardName) as? IssuesViewController {
+        if let issueVC = IssuesWireFrame.createIssuesViewController() {
             navigationController?.pushViewController(issueVC, animated: true)
         }
     }

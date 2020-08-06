@@ -53,6 +53,17 @@
 		BCF5F41C24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41B24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift */; };
 		BCF5F41E24DC57B9002C2B53 /* IssueDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F41D24DC57B9002C2B53 /* IssueDetailWireFrame.swift */; };
 		BCF5F42124DC5BB9002C2B53 /* IssuesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42024DC5BB9002C2B53 /* IssuesPresenterProtocol.swift */; };
+		BCF5F42324DC6263002C2B53 /* IssuesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42224DC6263002C2B53 /* IssuesViewProtocol.swift */; };
+		BCF5F42524DC62CC002C2B53 /* IssuesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42424DC62CC002C2B53 /* IssuesPresenter.swift */; };
+		BCF5F42824DC6314002C2B53 /* IssuesInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42724DC6314002C2B53 /* IssuesInteractorProtocol.swift */; };
+		BCF5F42A24DC6457002C2B53 /* IssuesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42924DC6457002C2B53 /* IssuesInteractor.swift */; };
+		BCF5F42E24DC6526002C2B53 /* IssuesLocalDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42D24DC6526002C2B53 /* IssuesLocalDataManagerProtocol.swift */; };
+		BCF5F43024DC6554002C2B53 /* IssuesLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F42F24DC6554002C2B53 /* IssuesLocalDataManager.swift */; };
+		BCF5F43324DC65E8002C2B53 /* IssuesRemoteDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43224DC65E8002C2B53 /* IssuesRemoteDataManagerProtocol.swift */; };
+		BCF5F43524DC666D002C2B53 /* IssuesRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43424DC666D002C2B53 /* IssuesRemoteDataManager.swift */; };
+		BCF5F43824DC683E002C2B53 /* IssuesWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43724DC683E002C2B53 /* IssuesWireFrameProtocol.swift */; };
+		BCF5F43A24DC6860002C2B53 /* IssuesWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43924DC6860002C2B53 /* IssuesWireFrame.swift */; };
+		BCF5F43D24DC6B8C002C2B53 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F43C24DC6B8C002C2B53 /* Realm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +116,17 @@
 		BCF5F41B24DC3C03002C2B53 /* IssueDetailWireFrameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailWireFrameProtocol.swift; sourceTree = "<group>"; };
 		BCF5F41D24DC57B9002C2B53 /* IssueDetailWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailWireFrame.swift; sourceTree = "<group>"; };
 		BCF5F42024DC5BB9002C2B53 /* IssuesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesPresenterProtocol.swift; sourceTree = "<group>"; };
+		BCF5F42224DC6263002C2B53 /* IssuesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewProtocol.swift; sourceTree = "<group>"; };
+		BCF5F42424DC62CC002C2B53 /* IssuesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesPresenter.swift; sourceTree = "<group>"; };
+		BCF5F42724DC6314002C2B53 /* IssuesInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesInteractorProtocol.swift; sourceTree = "<group>"; };
+		BCF5F42924DC6457002C2B53 /* IssuesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesInteractor.swift; sourceTree = "<group>"; };
+		BCF5F42D24DC6526002C2B53 /* IssuesLocalDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesLocalDataManagerProtocol.swift; sourceTree = "<group>"; };
+		BCF5F42F24DC6554002C2B53 /* IssuesLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesLocalDataManager.swift; sourceTree = "<group>"; };
+		BCF5F43224DC65E8002C2B53 /* IssuesRemoteDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesRemoteDataManagerProtocol.swift; sourceTree = "<group>"; };
+		BCF5F43424DC666D002C2B53 /* IssuesRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesRemoteDataManager.swift; sourceTree = "<group>"; };
+		BCF5F43724DC683E002C2B53 /* IssuesWireFrameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesWireFrameProtocol.swift; sourceTree = "<group>"; };
+		BCF5F43924DC6860002C2B53 /* IssuesWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesWireFrame.swift; sourceTree = "<group>"; };
+		BCF5F43C24DC6B8C002C2B53 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,9 +204,12 @@
 		BC225CD024D9DA8B00E2D68A /* Issues */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F43624DC682D002C2B53 /* WireFrame */,
+				BCF5F42B24DC6510002C2B53 /* Data */,
+				BCF5F42624DC6308002C2B53 /* Interactor */,
 				BCF5F41F24DC5B3F002C2B53 /* Presenter */,
-				BC225CD624D9DD8E00E2D68A /* IssuesTableViewCell */,
 				BC225CD524D9DD8300E2D68A /* View */,
+				BC225CD624D9DD8E00E2D68A /* IssuesTableViewCell */,
 			);
 			path = Issues;
 			sourceTree = "<group>";
@@ -193,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				BC225CD124D9DA9B00E2D68A /* IssuesViewController.swift */,
+				BCF5F42224DC6263002C2B53 /* IssuesViewProtocol.swift */,
 				BC225CD324D9DAD600E2D68A /* Issues.storyboard */,
 			);
 			path = View;
@@ -228,6 +254,7 @@
 		BC5ED41424D7EF6B0082147A /* ApolloGraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F43B24DC6B83002C2B53 /* Extension */,
 				BCE262FA24DBE7AB00DAF90C /* PersonalAccessToken */,
 				BC225CC024D88DA400E2D68A /* API.swift */,
 				BC225CC424D9CFD200E2D68A /* Model */,
@@ -404,8 +431,62 @@
 			isa = PBXGroup;
 			children = (
 				BCF5F42024DC5BB9002C2B53 /* IssuesPresenterProtocol.swift */,
+				BCF5F42424DC62CC002C2B53 /* IssuesPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BCF5F42624DC6308002C2B53 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F42724DC6314002C2B53 /* IssuesInteractorProtocol.swift */,
+				BCF5F42924DC6457002C2B53 /* IssuesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BCF5F42B24DC6510002C2B53 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F43124DC65DB002C2B53 /* Remote */,
+				BCF5F42C24DC6517002C2B53 /* Local */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BCF5F42C24DC6517002C2B53 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F42D24DC6526002C2B53 /* IssuesLocalDataManagerProtocol.swift */,
+				BCF5F42F24DC6554002C2B53 /* IssuesLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		BCF5F43124DC65DB002C2B53 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F43224DC65E8002C2B53 /* IssuesRemoteDataManagerProtocol.swift */,
+				BCF5F43424DC666D002C2B53 /* IssuesRemoteDataManager.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		BCF5F43624DC682D002C2B53 /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F43724DC683E002C2B53 /* IssuesWireFrameProtocol.swift */,
+				BCF5F43924DC6860002C2B53 /* IssuesWireFrame.swift */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		BCF5F43B24DC6B83002C2B53 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F43C24DC6B8C002C2B53 /* Realm.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,27 +641,38 @@
 				BC5ED41A24D7EF6B0082147A /* ViewController.swift in Sources */,
 				BC225CC324D8927600E2D68A /* Networkl.swift in Sources */,
 				BCF5F40B24DBF532002C2B53 /* IssueParticipantsModel.swift in Sources */,
+				BCF5F43024DC6554002C2B53 /* IssuesLocalDataManager.swift in Sources */,
 				BCF5F41224DC10EC002C2B53 /* IssueParticipantsNodeModel.swift in Sources */,
+				BCF5F42A24DC6457002C2B53 /* IssuesInteractor.swift in Sources */,
 				BCF5F42124DC5BB9002C2B53 /* IssuesPresenterProtocol.swift in Sources */,
 				BC225CD224D9DA9B00E2D68A /* IssuesViewController.swift in Sources */,
 				BCF5F40E24DBFB1C002C2B53 /* IssueLabelsModel.swift in Sources */,
 				BCE2630224DBEB3100DAF90C /* IssueCommentNodeModel.swift in Sources */,
 				BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */,
+				BCF5F43824DC683E002C2B53 /* IssuesWireFrameProtocol.swift in Sources */,
+				BCF5F43524DC666D002C2B53 /* IssuesRemoteDataManager.swift in Sources */,
 				BC225CC624D9D26600E2D68A /* IssueModel.swift in Sources */,
+				BCF5F43A24DC6860002C2B53 /* IssuesWireFrame.swift in Sources */,
+				BCF5F42824DC6314002C2B53 /* IssuesInteractorProtocol.swift in Sources */,
+				BCF5F42E24DC6526002C2B53 /* IssuesLocalDataManagerProtocol.swift in Sources */,
 				BC5ED41824D7EF6B0082147A /* SceneDelegate.swift in Sources */,
 				BCE2630524DBEB5D00DAF90C /* IssueCommentNodeDetailModel.swift in Sources */,
 				BCF5F40824DBF3AB002C2B53 /* IssueMilestoneModel.swift in Sources */,
 				BCF5F41E24DC57B9002C2B53 /* IssueDetailWireFrame.swift in Sources */,
 				BCE262F924DBE68900DAF90C /* PersonalAccessToken.swift in Sources */,
 				BCE262FC24DBEAB700DAF90C /* IssueNodeModel.swift in Sources */,
+				BCF5F42524DC62CC002C2B53 /* IssuesPresenter.swift in Sources */,
 				BCE2630024DBEB1200DAF90C /* IssueNodeCommentModel.swift in Sources */,
 				BC225CC124D88DA400E2D68A /* API.swift in Sources */,
 				BCF5F40524DBF1E7002C2B53 /* IssueAssigneesNodeModel.swift in Sources */,
+				BCF5F43D24DC6B8C002C2B53 /* Realm.swift in Sources */,
 				BCD593F724DBB0A2007E155A /* IssueDetailTableViewFooterView.swift in Sources */,
 				BC225CCD24D9D71700E2D68A /* Utils.swift in Sources */,
 				BCF5F41424DC1B85002C2B53 /* IssueDetailViewProtocol.swift in Sources */,
+				BCF5F42324DC6263002C2B53 /* IssuesViewProtocol.swift in Sources */,
 				BCF5F41924DC3BBE002C2B53 /* IssueDetailPresenter.swift in Sources */,
 				BCF5F40324DBEE5A002C2B53 /* IssueAssigneesModel.swift in Sources */,
+				BCF5F43324DC65E8002C2B53 /* IssuesRemoteDataManagerProtocol.swift in Sources */,
 				BCD5940324DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift in Sources */,
 				BCF5F41724DC2FE3002C2B53 /* IssueDetailPresenterProtocol.swift in Sources */,
 			);

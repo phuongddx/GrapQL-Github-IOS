@@ -8,10 +8,11 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class IssueParticipantsModel: Mappable {
-    var totalCount: Int = -1
-    var participantList: [PersonModel] = []
+class IssueParticipantsModel: Object, Mappable {
+    @objc dynamic var totalCount: Int = -1
+    let participantList = List<PersonModel>()
     
     required convenience init?(map: Map) {
         self.init()

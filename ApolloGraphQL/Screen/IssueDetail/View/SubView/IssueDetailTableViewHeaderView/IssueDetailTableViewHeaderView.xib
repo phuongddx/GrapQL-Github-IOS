@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xd-pl-q7i">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label asdasdasdsa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xd-pl-q7i">
                     <rect key="frame" x="15" y="15" width="384" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -34,6 +34,10 @@
                 <constraint firstAttribute="trailing" secondItem="5Uh-Z6-LDD" secondAttribute="trailing" id="thX-p2-hfE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descriptionLb" destination="7Xd-pl-q7i" id="osR-Av-UfA"/>
+                <outlet property="tableView" destination="5Uh-Z6-LDD" id="NOR-RI-SvW"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="-84.040178571428569"/>
         </view>
     </objects>

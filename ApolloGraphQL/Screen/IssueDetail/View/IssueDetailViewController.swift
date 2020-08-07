@@ -19,10 +19,11 @@ class IssueDetailViewController: UIViewController {
     
     @IBOutlet weak var countCommentLb: UILabel!
     @IBOutlet weak var countParticipantLb: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
+    private var headerView: IssueDetailTableViewHeaderView?
+    private var footerView: IssueDetailTableViewFooterView?
     private var issueObj: IssueNodeModel? {
         get {
             return presenter?.issueNode
@@ -41,7 +42,48 @@ class IssueDetailViewController: UIViewController {
         countParticipantLb.numberOfLines = 0
         countCommentLb.numberOfLines = 0
         avatarImageView.isCircleRadius()
+        
+        tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
+        tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
+        tableView.sectionFooterHeight = 100
+        tableView.estimatedSectionFooterHeight = UITableView.automaticDimension
+        tableView.sectionHeaderHeight = 100
+        tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.isScrollEnabled = false
     }
+}
+
+extension IssueDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if headerView == nil {
+            let view = Utils.viewFrom(IssueDetailTableViewHeaderView.nibName()) as! IssueDetailTableViewHeaderView
+            headerView = view
+            
+        }
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if footerView == nil {
+            
+        }
+        return footerView
+    }
+    
 }
 
 extension IssueDetailViewController: IssueDetailViewProtocol {

@@ -25,4 +25,12 @@ public final class Utils {
         let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
         return storyboard
     }
+    
+    class func viewFrom(_ nibName: String) -> UIView? {
+        let objects = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)
+        if objects!.count > 0 {
+            return objects![0] as? UIView
+        }
+        return nil
+    }
 }

@@ -17,9 +17,9 @@ class PersonModel: Object, Mappable {
     @objc dynamic var url: String?
     @objc dynamic var avatarUrl: String?
     
-    override class func primaryKey() -> String? {
-        return "id"
-    }
+//    override class func primaryKey() -> String? {
+//        return "id"
+//    }
     
     required convenience init?(map: Map) {
         self.init()

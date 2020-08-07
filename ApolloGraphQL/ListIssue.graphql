@@ -3,6 +3,7 @@ query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [I
     issues(last: $numberIssue, states: $states) {
       edges {
         node {
+          bodyText
           assignees(last: 100) {
             totalCount
             edges {

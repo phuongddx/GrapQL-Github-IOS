@@ -22,6 +22,7 @@ class IssueNodeModel: Object, Mappable {
     @objc dynamic var milestone: IssueMilestoneModel?
     @objc dynamic var labels: IssueLabelsModel?
     @objc dynamic var participant: IssueParticipantsModel?
+    @objc dynamic var bodyText: String?
     
     override class func primaryKey() -> String? {
         return "id"
@@ -35,6 +36,7 @@ class IssueNodeModel: Object, Mappable {
     }
     
     func mapping(map: Map) {
+        bodyText <- map["bodyText"]
         url <- map["url"]
         title <- map["title"]
         state <- map["state"]
@@ -51,6 +53,13 @@ class IssueNodeModel: Object, Mappable {
 }
 
 extension IssueNodeModel {
+    func getBodyTextIssue() -> String {
+        if let bodyText = bodyText, bodyText.isEmpty == false {
+            return bodyText
+        }
+        return ""
+    }
+    
     func getCreatedAtString() -> String {
         if let createdAt = createdAt, createdAt.isEmpty == false {
             return createdAt

@@ -31,3 +31,12 @@ class IssueLabelsModel: Object, Mappable {
         }
     }
 }
+
+extension IssueLabelsModel {
+    func getNameFirst() -> String {
+        if labelList.isInvalidated == false, labelList.count > 0, let name = labelList[0].name, name.isEmpty == false {
+            return name
+        }
+        return ""
+    }
+}

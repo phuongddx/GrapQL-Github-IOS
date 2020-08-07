@@ -29,3 +29,12 @@ class IssueMilestoneModel: Object, Mappable {
         creator <- map["creator"]
     }
 }
+
+extension IssueMilestoneModel {
+    func getTitle() -> String {
+        if let title = title, title.isEmpty == false {
+            return title
+        }
+        return ""
+    }
+}

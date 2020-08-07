@@ -45,13 +45,11 @@ class IssueDetailViewController: UIViewController {
         
         tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
         tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
-        tableView.sectionFooterHeight = 100
-        tableView.estimatedSectionFooterHeight = UITableView.automaticDimension
-        tableView.sectionHeaderHeight = 100
-        tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
+        tableView.sectionHeaderHeight = 1000
+        tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
     }
 }
 
@@ -72,18 +70,30 @@ extension IssueDetailViewController: UITableViewDelegate, UITableViewDataSource 
         if headerView == nil {
             let view = Utils.viewFrom(IssueDetailTableViewHeaderView.nibName()) as! IssueDetailTableViewHeaderView
             headerView = view
-            
         }
+        headerView!.setupData(issueObj)
         return headerView
     }
     
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        let tmpLabel: UILabel = UILabel()
+//        if let issue = issueObj, issue.isInvalidated == false {
+//            tmpLabel.text = issue.getBodyTextIssue()
+//        }
+//        tmpLabel.frame.size.width = Utils.screenSize().width - 30
+//        return tmpLabel.heightOfLabel() + 90
+//    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if footerView == nil {
-            
-        }
-        return footerView
+        let view = UIView.init()
+        view.backgroundColor = .cyan
+        view.frame = CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 100)
+        return view
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 100
+    }
 }
 
 extension IssueDetailViewController: IssueDetailViewProtocol {

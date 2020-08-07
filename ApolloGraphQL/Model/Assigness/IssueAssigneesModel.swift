@@ -35,3 +35,14 @@ class IssueAssigneesModel: Object, Mappable {
     }
 }
 
+extension IssueAssigneesModel {
+    func getUsernameFirst() -> String {
+        if assigneesList.isInvalidated == false, assigneesList.count > 0,
+            let username = assigneesList[0].username,
+            username.isEmpty == false {
+            return username
+        }
+        return ""
+    }
+}
+

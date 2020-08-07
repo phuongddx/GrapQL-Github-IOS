@@ -191,7 +191,7 @@ public final class ListIssueQuery: GraphQLQuery {
     public var operationName: String = "ListIssue"
     
   public let operationDefinition =
-    "query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [IssueState!]) {\n  repository(owner: $owner, name: $name) {\n    __typename\n    issues(last: $numberIssue, states: $states) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          assignees(last: 100) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                name\n                id\n                avatarUrl\n                resourcePath\n                url\n                login\n                avatarUrl\n              }\n            }\n          }\n          id\n          createdAt\n          updatedAt\n          milestone {\n            __typename\n            state\n            title\n            createdAt\n            creator {\n              __typename\n              login\n              avatarUrl\n              url\n            }\n          }\n          author {\n            __typename\n            avatarUrl\n            url\n            login\n            resourcePath\n          }\n          participants(last: 100) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                id\n                login\n                url\n                avatarUrl\n                resourcePath\n                updatedAt\n                createdAt\n              }\n            }\n          }\n          state\n          title\n          url\n          comments(last: 100) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                updatedAt\n                createdAt\n                url\n                id\n                resourcePath\n                author {\n                  __typename\n                  login\n                  avatarUrl\n                  resourcePath\n                  url\n                }\n                bodyText\n              }\n            }\n          }\n          labels(last: 100) {\n            __typename\n            totalCount\n            nodes {\n              __typename\n              description\n              createdAt\n              name\n              color\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+    "query ListIssue($owner: String!, $name: String!, $numberIssue: Int!, $states: [IssueState!]) {\n  repository(owner: $owner, name: $name) {\n    __typename\n    issues(last: $numberIssue, states: $states) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          bodyText\n          assignees(last: 100) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                name\n                id\n                avatarUrl\n                resourcePath\n                url\n                login\n                avatarUrl\n              }\n            }\n          }\n          id\n          createdAt\n          updatedAt\n          milestone {\n            __typename\n            state\n            title\n            createdAt\n            creator {\n              __typename\n              login\n              avatarUrl\n              url\n            }\n          }\n          author {\n            __typename\n            avatarUrl\n            url\n            login\n            resourcePath\n          }\n          participants(last: 100) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                id\n                login\n                url\n                avatarUrl\n                resourcePath\n                updatedAt\n                createdAt\n              }\n            }\n          }\n          state\n          title\n          url\n          comments(last: 100) {\n            __typename\n            totalCount\n            edges {\n              __typename\n              node {\n                __typename\n                updatedAt\n                createdAt\n                url\n                id\n                resourcePath\n                author {\n                  __typename\n                  login\n                  avatarUrl\n                  resourcePath\n                  url\n                }\n                bodyText\n              }\n            }\n          }\n          labels(last: 100) {\n            __typename\n            totalCount\n            nodes {\n              __typename\n              description\n              createdAt\n              name\n              color\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}"
 
   public var owner: String
   public var name: String
@@ -352,6 +352,7 @@ public final class ListIssueQuery: GraphQLQuery {
 
             public static let selections: [GraphQLSelection] = [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("bodyText", type: .nonNull(.scalar(String.self))),
               GraphQLField("assignees", arguments: ["last": 100], type: .nonNull(.object(Assignee.selections))),
               GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
               GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
@@ -372,8 +373,8 @@ public final class ListIssueQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(assignees: Assignee, id: GraphQLID, createdAt: String, updatedAt: String, milestone: Milestone? = nil, author: Author? = nil, participants: Participant, state: IssueState, title: String, url: String, comments: Comment, labels: Label? = nil) {
-              self.init(unsafeResultMap: ["__typename": "Issue", "assignees": assignees.resultMap, "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "milestone": milestone.flatMap { (value: Milestone) -> ResultMap in value.resultMap }, "author": author.flatMap { (value: Author) -> ResultMap in value.resultMap }, "participants": participants.resultMap, "state": state, "title": title, "url": url, "comments": comments.resultMap, "labels": labels.flatMap { (value: Label) -> ResultMap in value.resultMap }])
+            public init(bodyText: String, assignees: Assignee, id: GraphQLID, createdAt: String, updatedAt: String, milestone: Milestone? = nil, author: Author? = nil, participants: Participant, state: IssueState, title: String, url: String, comments: Comment, labels: Label? = nil) {
+              self.init(unsafeResultMap: ["__typename": "Issue", "bodyText": bodyText, "assignees": assignees.resultMap, "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "milestone": milestone.flatMap { (value: Milestone) -> ResultMap in value.resultMap }, "author": author.flatMap { (value: Author) -> ResultMap in value.resultMap }, "participants": participants.resultMap, "state": state, "title": title, "url": url, "comments": comments.resultMap, "labels": labels.flatMap { (value: Label) -> ResultMap in value.resultMap }])
             }
 
             public var __typename: String {
@@ -382,6 +383,16 @@ public final class ListIssueQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// Identifies the body of the issue rendered to text.
+            public var bodyText: String {
+              get {
+                return resultMap["bodyText"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "bodyText")
               }
             }
 

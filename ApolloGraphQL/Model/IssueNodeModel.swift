@@ -39,11 +39,7 @@ class IssueNodeModel: Object, Mappable {
         title <- map["title"]
         state <- map["state"]
         if let createdAt = map.JSON["createdAt"] as? String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            let date = dateFormatter.date(from: createdAt)!
-            self.createdAt = dateFormatter.string(from: date)
+            self.createdAt = createdAt.convertToDateTimeAgo()
         }
         author <- map["author"]
         comments <- map["comments"]
@@ -55,6 +51,13 @@ class IssueNodeModel: Object, Mappable {
 }
 
 extension IssueNodeModel {
+    func getCreatedAtString() -> String {
+        if let createdAt = createdAt, createdAt.isEmpty == false {
+            return createdAt
+        }
+        return ""
+    }
+    
     func getAuthorName() -> String {
         if let author = author, let username = author.username, username.count > 0 {
             return username
@@ -79,6 +82,13 @@ extension IssueNodeModel {
     func getTitle() -> String {
         if let title = title, title.count > 0 {
             return title
+        }
+        return ""
+    }
+    
+    func getAvatarAuhtorUrl() -> String {
+        if let author = author, let url = author.avatarUrl, url.count > 0 {
+            return url
         }
         return ""
     }

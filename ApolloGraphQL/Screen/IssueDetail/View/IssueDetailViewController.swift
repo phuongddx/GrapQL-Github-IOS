@@ -37,9 +37,10 @@ class IssueDetailViewController: UIViewController {
             presenter.viewDidload()
         }
         
+        navigationController?.navigationBar.backgroundColor =  .black
         countParticipantLb.numberOfLines = 0
         countCommentLb.numberOfLines = 0
-        
+        avatarImageView.isCircleRadius()
     }
 }
 
@@ -48,6 +49,7 @@ extension IssueDetailViewController: IssueDetailViewProtocol {
         var titleStr: String = ""
         var countCommentStr: String = ""
         var countParticipantStr: String = ""
+        var avatarAuthorUrlStr: String = ""
         if let issue = issueObj {
             if let title = issue.title, title.count > 0 {
                 titleStr = title
@@ -63,11 +65,12 @@ extension IssueDetailViewController: IssueDetailViewProtocol {
                     
                 }
             }
+            avatarAuthorUrlStr = issue.getAvatarAuhtorUrl()
+            updateTimeLb.text = issue.getCreatedAtString()
         }
         titleLb.text = titleStr
         countCommentLb.text = countCommentStr
         countParticipantLb.text = countParticipantStr
-        
-        
+        avatarImageView.downloadImage(from: avatarAuthorUrlStr)
     }
 }

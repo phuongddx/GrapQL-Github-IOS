@@ -6,6 +6,7 @@ target 'ApolloGraphQL' do
   use_frameworks!
 
   # Pods for ApolloGraphQL
+  pod 'Kingfisher', '~> 4.10.1'
   pod "Apollo"
   pod 'RealmSwift'
   pod 'ObjectMapper', '~> 3.5'

@@ -33,7 +33,9 @@ class IssueCommentNodeDetailModel: Object, Mappable {
     func mapping(map: Map) {
         author <- map["author"]
         bodyText <- map["bodyText"]
-        updatedAt <- map["updatedAt"]
+        if let updatedAt = map.JSON["updatedAt"] as? String {
+            self.updatedAt = updatedAt.convertToDateTimeAgo()
+        }
         createdAt <- map["createdAt"]
         resourcePath <- map["resourcePath"]
         url <- map["url"]

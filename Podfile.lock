@@ -2,6 +2,7 @@ PODS:
   - Apollo (0.30.0):
     - Apollo/Core (= 0.30.0)
   - Apollo/Core (0.30.0)
+  - Kingfisher (4.10.1)
   - ObjectMapper (3.5.3)
   - Realm (5.0.1):
     - Realm/Headers (= 5.0.1)
@@ -11,22 +12,25 @@ PODS:
 
 DEPENDENCIES:
   - Apollo
+  - Kingfisher (~> 4.10.1)
   - ObjectMapper (~> 3.5)
   - RealmSwift
 
 SPEC REPOS:
   trunk:
     - Apollo
+    - Kingfisher
     - ObjectMapper
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
   Apollo: c10bf1a4c7db5237be1056ace16347cd1cdcb863
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   Realm: d36cfc336d76d2e15b13651beb6050f49354de4b
   RealmSwift: f29ae0ceaf4fbaf4803c40bbebd838ea2beb903a
 
-PODFILE CHECKSUM: d88e78d47e1dccd62f3e63ab10753f48667abd24
+PODFILE CHECKSUM: 783732690c6f23b082008cc753e6684fe3c02f34
 
 COCOAPODS: 1.8.1

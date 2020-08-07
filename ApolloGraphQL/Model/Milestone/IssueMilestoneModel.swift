@@ -23,7 +23,9 @@ class IssueMilestoneModel: Object, Mappable {
     func mapping(map: Map) {
         state <- map["state"]
         title <- map["title"]
-        createdAt <- map["createdAt"]
+        if let createdAt = map.JSON["createdAt"] as? String {
+            self.createdAt = createdAt.convertToDateTimeAgo()
+        }
         creator <- map["creator"]
     }
 }

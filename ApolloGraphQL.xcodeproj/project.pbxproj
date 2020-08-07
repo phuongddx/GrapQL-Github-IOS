@@ -24,6 +24,8 @@
 		BC5ED41D24D7EF6B0082147A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED41B24D7EF6B0082147A /* Main.storyboard */; };
 		BC5ED41F24D7EF6D0082147A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED41E24D7EF6D0082147A /* Assets.xcassets */; };
 		BC5ED42224D7EF6D0082147A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5ED42024D7EF6D0082147A /* LaunchScreen.storyboard */; };
+		BC70404E24DCCE9900CF8444 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70404D24DCCE9900CF8444 /* UIImageView.swift */; };
+		BC70405024DCD80600CF8444 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70404F24DCD80600CF8444 /* String.swift */; };
 		BCD593EA24DB1573007E155A /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD593E924DB1573007E155A /* IssueDetailViewController.swift */; };
 		BCD593EC24DB15CE007E155A /* IssueDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD593EB24DB15CE007E155A /* IssueDetail.storyboard */; };
 		BCD593F224DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD593F124DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift */; };
@@ -91,6 +93,8 @@
 		BC5ED41E24D7EF6D0082147A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC5ED42124D7EF6D0082147A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC5ED42324D7EF6D0082147A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC70404D24DCCE9900CF8444 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		BC70404F24DCD80600CF8444 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BCD593E924DB1573007E155A /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
 		BCD593EB24DB15CE007E155A /* IssueDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueDetail.storyboard; sourceTree = "<group>"; };
 		BCD593F124DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailTableViewHeaderView.swift; sourceTree = "<group>"; };
@@ -495,6 +499,8 @@
 			isa = PBXGroup;
 			children = (
 				BCF5F43C24DC6B8C002C2B53 /* Realm.swift */,
+				BC70404D24DCCE9900CF8444 /* UIImageView.swift */,
+				BC70404F24DCD80600CF8444 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 				BCE2630824DBECEA00DAF90C /* PersonModel.swift in Sources */,
 				BCF5F41024DBFD31002C2B53 /* IssueLabelsDetailModel.swift in Sources */,
 				BCF5F44024DC70AD002C2B53 /* IssueDetailInteractorProtocol.swift in Sources */,
+				BC70404E24DCCE9900CF8444 /* UIImageView.swift in Sources */,
 				BCF5F44224DC7199002C2B53 /* IssueDetailInteractor.swift in Sources */,
 				BCD593F224DBAC7B007E155A /* IssueDetailTableViewHeaderView.swift in Sources */,
 				BCD593FE24DBB184007E155A /* IssueCommentTableViewCell.swift in Sources */,
@@ -705,6 +712,7 @@
 				BCF5F41924DC3BBE002C2B53 /* IssueDetailPresenter.swift in Sources */,
 				BCF5F40324DBEE5A002C2B53 /* IssueAssigneesModel.swift in Sources */,
 				BCF5F43324DC65E8002C2B53 /* IssuesRemoteDataManagerProtocol.swift in Sources */,
+				BC70405024DCD80600CF8444 /* String.swift in Sources */,
 				BCD5940324DBB61F007E155A /* IssueDetailHeaderTableViewCell.swift in Sources */,
 				BCF5F41724DC2FE3002C2B53 /* IssueDetailPresenterProtocol.swift in Sources */,
 			);

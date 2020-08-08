@@ -50,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="gb3-rZ-qEc" id="fkU-Wx-HxA"/>
+                        <outlet property="personalAccessTokenTf" destination="w5D-fg-iIX" id="QKc-Br-LY8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54l-eE-yfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

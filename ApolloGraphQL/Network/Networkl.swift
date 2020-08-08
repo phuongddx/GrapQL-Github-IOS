@@ -17,6 +17,10 @@ class Network {
         transport.delegate = self
         return transport
     }()
+    
+    private let token: String = {
+        return tokenGit.getToken()
+    }()
 
     private(set) lazy var apollo = ApolloClient.init(networkTransport: self.networkTransport)
 }
@@ -31,9 +35,9 @@ extension Network: HTTPNetworkTransportPreflightDelegate {
         // Get the existing headers, or create new ones if they're nil
         var headers = request.allHTTPHeaderFields ?? [String: String]()
         // Add any new headers you need
-        headers["Authorization"] = "bearer \(PersonalAccessToken.tokenGithub)"
+        headers["Authorization"] = "bearer \(token)"
         // Re-assign the updated headers to the request.
         request.allHTTPHeaderFields = headers
-        print("Outgoing request: \(request)")
+        print("Outgoing request: \(request) - Token:\(token) - headers: \(headers)")
     }
 }

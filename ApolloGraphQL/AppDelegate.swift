@@ -10,6 +10,7 @@ import UIKit
 
 
 let apollo = Network.shared.apollo
+let tokenGit = PersonalAccessToken.shared
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

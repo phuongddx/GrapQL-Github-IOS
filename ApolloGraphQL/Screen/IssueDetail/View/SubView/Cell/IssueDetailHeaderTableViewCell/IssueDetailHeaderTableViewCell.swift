@@ -58,7 +58,7 @@ class IssueDetailHeaderTableViewCell: UITableViewCell {
                     contentStr = "No Milestones"
                 }
             }
-            else if id == IssueDataName.milestone.rawValue {
+            else if id == IssueDataName.labels.rawValue {
                 titleStr = "Labels"
                 if let labels = data["content"] as? IssueLabelsModel, labels.totalCount > 0 {
                     contentStr = labels.getNameFirst()

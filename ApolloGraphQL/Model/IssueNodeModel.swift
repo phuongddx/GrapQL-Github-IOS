@@ -57,7 +57,7 @@ extension IssueNodeModel {
         if let bodyText = bodyText, bodyText.isEmpty == false {
             return bodyText
         }
-        return ""
+        return "No Body"
     }
     
     func getCreatedAtString() -> String {

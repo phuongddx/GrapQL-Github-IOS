@@ -15,25 +15,39 @@ enum IssueDataName: String {
     case labels = "labels"
 }
 
+protocol IssueDetailTableViewHeaderViewDelegate: class {
+    func issueDetailTableViewHeaderViewDidUpdateBodyTextHeightConstraint(_ view: IssueDetailTableViewHeaderView)
+}
+
 class IssueDetailTableViewHeaderView: UIView {
     class func nibName() -> String {
         return "IssueDetailTableViewHeaderView"
     }
     
-    @IBOutlet weak var descriptionLb: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     private var issue: IssueNodeModel?
     private var datalist: [[String: Any]] = []
+    var isAppened: Bool = false
+    
+    weak var delegate: IssueDetailTableViewHeaderViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        descriptionLb.numberOfLines = 0
         backgroundColor = .white
-        tableViewHeightConstraint.constant = CGFloat(datalist.count) * IssueDetailHeaderTableViewCell.getHeight()
+        tableViewHeightConstraint.constant = 3 * IssueDetailHeaderTableViewCell.getHeight()
+        
+        tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
+        tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
+        tableView.register(UINib.init(nibName: IssueDetailHeaderTableViewCell.getIdentifier(), bundle: Bundle.main), forCellReuseIdentifier: IssueDetailHeaderTableViewCell.getIdentifier())
+        tableView.rowHeight = IssueDetailHeaderTableViewCell.getHeight()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
     }
     
     func setupData(_ issue: IssueNodeModel?) {
@@ -43,7 +57,6 @@ class IssueDetailTableViewHeaderView: UIView {
     
     func didSetIssue() {
         if let issue = issue, issue.isInvalidated == false {
-            descriptionLb.text = issue.getBodyTextIssue()
             var assigneesDict: [String: Any] = [
                 "id": IssueDataName.assignees.rawValue as String,
                 "title": "Assignees" as String]
@@ -64,9 +77,12 @@ class IssueDetailTableViewHeaderView: UIView {
             if let labels = issue.labels, labels.isInvalidated == false {
                 labelsDict.updateValue(labels as IssueLabelsModel, forKey: "content")
             }
-            datalist.append(assigneesDict)
-            datalist.append(milestoneDict)
-            datalist.append(labelsDict)
+            if isAppened == false {
+                isAppened = true
+                datalist.append(assigneesDict)
+                datalist.append(milestoneDict)
+                datalist.append(labelsDict)
+            }
         }
         updateView()
     }
@@ -74,5 +90,26 @@ class IssueDetailTableViewHeaderView: UIView {
     func updateView() {
         tableViewHeightConstraint.constant = CGFloat(datalist.count) * IssueDetailHeaderTableViewCell.getHeight()
         tableView.reloadData()
+    }
+}
+
+extension IssueDetailTableViewHeaderView: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return datalist.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: IssueDetailHeaderTableViewCell.getIdentifier(), for: indexPath) as! IssueDetailHeaderTableViewCell
+        cell.setupData(datalist[indexPath.row])
+        cell.frame.size.width = Utils.screenSize().width
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.issueDetailTableViewHeaderViewDidUpdateBodyTextHeightConstraint(self)
     }
 }

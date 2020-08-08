@@ -120,23 +120,32 @@
                                                     <constraint firstItem="FhD-se-0BC" firstAttribute="width" secondItem="dNk-0k-QeM" secondAttribute="width" id="zmW-3d-vtD"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-9I-j1d">
+                                                <rect key="frame" x="15" y="279" width="384" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vc2-7t-rRE">
-                                                <rect key="frame" x="0.0" y="284" width="414" height="535"/>
+                                                <rect key="frame" x="0.0" y="300" width="414" height="519"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Vc2-7t-rRE" secondAttribute="bottom" id="0eM-oP-Tu0"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vc2-7t-rRE" secondAttribute="trailing" id="4MQ-bX-jwT"/>
                                             <constraint firstItem="qHS-sF-rpS" firstAttribute="leading" secondItem="xS3-ZR-oLQ" secondAttribute="leading" id="7Fg-JP-7I8"/>
-                                            <constraint firstItem="Vc2-7t-rRE" firstAttribute="leading" secondItem="xS3-ZR-oLQ" secondAttribute="leading" id="8bA-Pa-sD2"/>
+                                            <constraint firstItem="Vc2-7t-rRE" firstAttribute="leading" secondItem="xS3-ZR-oLQ" secondAttribute="leading" id="7kb-ug-XVT"/>
+                                            <constraint firstItem="CeN-9I-j1d" firstAttribute="leading" secondItem="xS3-ZR-oLQ" secondAttribute="leading" constant="15" id="CeD-c7-gDS"/>
                                             <constraint firstAttribute="trailing" secondItem="FN8-IV-YIr" secondAttribute="trailing" id="EQi-tI-5Te"/>
+                                            <constraint firstAttribute="trailing" secondItem="CeN-9I-j1d" secondAttribute="trailing" constant="15" id="Kay-re-PEc"/>
                                             <constraint firstItem="qHS-sF-rpS" firstAttribute="top" secondItem="FN8-IV-YIr" secondAttribute="bottom" id="LZ9-ap-yoR"/>
-                                            <constraint firstItem="Vc2-7t-rRE" firstAttribute="top" secondItem="qHS-sF-rpS" secondAttribute="bottom" constant="20" id="ONh-tX-b9i"/>
+                                            <constraint firstItem="Vc2-7t-rRE" firstAttribute="top" secondItem="CeN-9I-j1d" secondAttribute="bottom" id="OZ1-iP-100"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vc2-7t-rRE" secondAttribute="bottom" id="Zdg-81-WJq"/>
                                             <constraint firstItem="FN8-IV-YIr" firstAttribute="top" secondItem="xS3-ZR-oLQ" secondAttribute="top" id="bVv-zo-Mb5"/>
                                             <constraint firstItem="FN8-IV-YIr" firstAttribute="leading" secondItem="xS3-ZR-oLQ" secondAttribute="leading" id="nxt-cZ-vWg"/>
+                                            <constraint firstItem="CeN-9I-j1d" firstAttribute="top" secondItem="qHS-sF-rpS" secondAttribute="bottom" constant="15" id="pzw-DU-orm"/>
                                             <constraint firstAttribute="trailing" secondItem="qHS-sF-rpS" secondAttribute="trailing" id="rCY-lH-FAt"/>
-                                            <constraint firstAttribute="trailing" secondItem="Vc2-7t-rRE" secondAttribute="trailing" id="tgW-UY-nFy"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -146,7 +155,7 @@
                                     <constraint firstItem="xS3-ZR-oLQ" firstAttribute="top" secondItem="rUt-jR-X1l" secondAttribute="top" id="IcU-Sa-uXV"/>
                                     <constraint firstAttribute="trailing" secondItem="xS3-ZR-oLQ" secondAttribute="trailing" id="fkR-Vw-Z9I"/>
                                     <constraint firstAttribute="bottom" secondItem="xS3-ZR-oLQ" secondAttribute="bottom" id="gOo-BK-ttz"/>
-                                    <constraint firstItem="xS3-ZR-oLQ" firstAttribute="height" secondItem="rUt-jR-X1l" secondAttribute="height" priority="999" constant="1" id="oN4-Z9-iG4"/>
+                                    <constraint firstItem="xS3-ZR-oLQ" firstAttribute="height" secondItem="rUt-jR-X1l" secondAttribute="height" priority="249" constant="1" id="oN4-Z9-iG4"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -158,8 +167,10 @@
                             <constraint firstItem="bAp-Rb-eym" firstAttribute="top" secondItem="rUt-jR-X1l" secondAttribute="bottom" id="lub-iB-O6x"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="avatarImageView" destination="4hD-ti-3nd" id="gHn-50-Ou7"/>
+                        <outlet property="bodyTextLb" destination="CeN-9I-j1d" id="4td-zG-2E0"/>
                         <outlet property="countCommentLb" destination="b3W-MI-HSf" id="jXa-Yo-cJY"/>
                         <outlet property="countParticipantLb" destination="IXg-4R-sGW" id="1Zr-f6-xhW"/>
                         <outlet property="tableView" destination="Vc2-7t-rRE" id="Gmf-S4-enE"/>

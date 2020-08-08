@@ -19,6 +19,7 @@ class IssueDetailViewController: UIViewController {
     
     @IBOutlet weak var countCommentLb: UILabel!
     @IBOutlet weak var countParticipantLb: UILabel!
+    @IBOutlet weak var bodyTextLb: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
@@ -38,7 +39,7 @@ class IssueDetailViewController: UIViewController {
             presenter.viewDidload()
         }
         
-        navigationController?.navigationBar.backgroundColor =  .black
+        bodyTextLb.numberOfLines = 0
         countParticipantLb.numberOfLines = 0
         countCommentLb.numberOfLines = 0
         avatarImageView.isCircleRadius()
@@ -47,15 +48,21 @@ class IssueDetailViewController: UIViewController {
         tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isScrollEnabled = false
-        tableView.sectionHeaderHeight = 1000
-        tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
+        tableView.isScrollEnabled = true
+        tableView.estimatedSectionHeaderHeight = 150
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+    }
+}
+
+extension IssueDetailViewController: IssueDetailTableViewHeaderViewDelegate {
+    func issueDetailTableViewHeaderViewDidUpdateBodyTextHeightConstraint(_ view: IssueDetailTableViewHeaderView) {
+        tableView.reloadData()
     }
 }
 
 extension IssueDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,33 +74,54 @@ extension IssueDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if headerView == nil {
-            let view = Utils.viewFrom(IssueDetailTableViewHeaderView.nibName()) as! IssueDetailTableViewHeaderView
-            headerView = view
+        if section == 0 {
+            if headerView == nil {
+                let view = Utils.viewFrom(IssueDetailTableViewHeaderView.nibName()) as! IssueDetailTableViewHeaderView
+                headerView = view
+                headerView!.frame.size.width = Utils.screenSize().width
+                headerView!.delegate = self
+            }
+            headerView!.setupData(issueObj)
+            return headerView
         }
-        headerView!.setupData(issueObj)
-        return headerView
+        return nil
     }
     
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if section == 0 {
+//            let tmpLabel: UILabel = UILabel()
+//            if let issue = issueObj, issue.isInvalidated == false {
+//                tmpLabel.text = issue.getBodyTextIssue()
+//            }
+//            tmpLabel.numberOfLines = 0
+//            tmpLabel.sizeToFit()
+//            tmpLabel.layoutIfNeeded()
+//            return tmpLabel.intrinsicContentSize.height + 150
+//        }
+//        return 0
+//    }
+    
+//    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
 //        let tmpLabel: UILabel = UILabel()
 //        if let issue = issueObj, issue.isInvalidated == false {
 //            tmpLabel.text = issue.getBodyTextIssue()
 //        }
-//        tmpLabel.frame.size.width = Utils.screenSize().width - 30
-//        return tmpLabel.heightOfLabel() + 90
+//        tmpLabel.numberOfLines = 0
+//        tmpLabel.sizeToFit()
+//        tmpLabel.layoutIfNeeded()
+//        return tmpLabel.intrinsicContentSize.height + 200
 //    }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView.init()
-        view.backgroundColor = .cyan
-        view.frame = CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 100)
-        return view
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100
-    }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let view = UIView.init()
+//        view.backgroundColor = .blue
+//        view.frame = CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 100)
+//        return view
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 500
+//    }
 }
 
 extension IssueDetailViewController: IssueDetailViewProtocol {
@@ -119,10 +147,12 @@ extension IssueDetailViewController: IssueDetailViewProtocol {
             }
             avatarAuthorUrlStr = issue.getAvatarAuhtorUrl()
             updateTimeLb.text = issue.getCreatedAtString()
+            bodyTextLb.text = issue.getBodyTextIssue()
         }
         titleLb.text = titleStr
         countCommentLb.text = countCommentStr
         countParticipantLb.text = countParticipantStr
         avatarImageView.downloadImage(from: avatarAuthorUrlStr)
+        tableView.reloadData()
     }
 }

@@ -41,7 +41,7 @@ class IssueNodeModel: Object, Mappable {
         title <- map["title"]
         state <- map["state"]
         if let createdAt = map.JSON["createdAt"] as? String {
-            self.createdAt = createdAt.convertToDateTimeAgo()
+            self.createdAt = createdAt
         }
         author <- map["author"]
         comments <- map["comments"]
@@ -62,7 +62,7 @@ extension IssueNodeModel {
     
     func getCreatedAtString() -> String {
         if let createdAt = createdAt, createdAt.isEmpty == false {
-            return createdAt
+            return createdAt.convertToDateTimeAgo()!
         }
         return ""
     }

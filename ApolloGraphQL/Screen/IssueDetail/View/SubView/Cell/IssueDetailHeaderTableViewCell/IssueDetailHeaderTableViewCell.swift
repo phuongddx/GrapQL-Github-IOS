@@ -67,6 +67,9 @@ class IssueDetailHeaderTableViewCell: UITableViewCell {
                     contentStr = "No Labels"
                 }
             }
+            if let id = data["id"] as? String {
+                iconImageView.image = UIImage.init(named: id)
+            }
             contentLb.text = contentStr
             titleLb.text = titleStr
         }

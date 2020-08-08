@@ -12,6 +12,6 @@ import RealmSwift
 class IssuesLocalDataManager: IssuesLocalDataManagerProtocol {
     func initIssues() -> IssueList {
         let realm = try! Realm()
-        return realm.objects(IssueNodeModel.self).sorted(byKeyPath: "", ascending: <#T##Bool#>)
+        return realm.objects(IssueNodeModel.self).sorted(byKeyPath: "createdAt", ascending: false)
     }
 }

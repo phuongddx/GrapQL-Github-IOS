@@ -56,6 +56,7 @@ class IssuesTableViewCell: UITableViewCell {
             if let title = issue.title {
                 titleStr = title
             }
+            createAtLb.text = issue.getCreatedAtString()
         }
         let fullString = NSMutableAttributedString.init()
         fullString.append(NSAttributedString.init(string: "#\(indexRow + 1)\n", attributes: [.font: UIFont.systemFont(ofSize: 14, weight: .medium), .foregroundColor: UIColor.systemBlue]))

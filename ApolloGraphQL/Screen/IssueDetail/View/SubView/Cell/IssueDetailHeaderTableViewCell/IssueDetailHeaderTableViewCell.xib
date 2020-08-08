@@ -16,16 +16,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DvZ-lo-VU6">
-                        <rect key="frame" x="15" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="15" y="17.5" width="15" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="Pl1-Xs-7B9"/>
-                            <constraint firstAttribute="height" constant="50" id="bV8-ky-azR"/>
+                            <constraint firstAttribute="width" constant="15" id="Pl1-Xs-7B9"/>
+                            <constraint firstAttribute="height" constant="15" id="bV8-ky-azR"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh4-iZ-bjP">
-                        <rect key="frame" x="75" y="15.5" width="258.5" height="19.5"/>
+                        <rect key="frame" x="40" y="17" width="293.5" height="16"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

@@ -44,7 +44,7 @@ class IssueDetailViewController: UIViewController {
         let view = Utils.viewFrom(IssueDetailView.nibName) as! IssueDetailView
         detailView = view
         contentView.addChildView(detailView!)
-        
+
         if let presenter = presenter {
             presenter.viewDidload()
         }

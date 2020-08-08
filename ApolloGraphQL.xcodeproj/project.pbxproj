@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		68850D2D54669EB27FAF77CA /* Pods_ApolloGraphQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8C2ECD9C48907865EC0F2 /* Pods_ApolloGraphQL.framework */; };
+		BC01214524DE6BD20037432A /* IssueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC01214424DE6BD20037432A /* IssueDetailView.swift */; };
+		BC01214724DE6C040037432A /* IssueDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC01214624DE6C040037432A /* IssueDetailView.xib */; };
 		BC225CC124D88DA400E2D68A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC024D88DA400E2D68A /* API.swift */; };
 		BC225CC324D8927600E2D68A /* Networkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC224D8927600E2D68A /* Networkl.swift */; };
 		BC225CC624D9D26600E2D68A /* IssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC225CC524D9D26600E2D68A /* IssueModel.swift */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		74BD593F3FDBA95AE6414160 /* Pods-ApolloGraphQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloGraphQL.debug.xcconfig"; path = "Target Support Files/Pods-ApolloGraphQL/Pods-ApolloGraphQL.debug.xcconfig"; sourceTree = "<group>"; };
 		ACDBA350A66947E99133F508 /* Pods-ApolloGraphQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloGraphQL.release.xcconfig"; path = "Target Support Files/Pods-ApolloGraphQL/Pods-ApolloGraphQL.release.xcconfig"; sourceTree = "<group>"; };
+		BC01214424DE6BD20037432A /* IssueDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailView.swift; sourceTree = "<group>"; };
+		BC01214624DE6C040037432A /* IssueDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailView.xib; sourceTree = "<group>"; };
 		BC225CC024D88DA400E2D68A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BC225CC224D8927600E2D68A /* Networkl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkl.swift; sourceTree = "<group>"; };
 		BC225CC524D9D26600E2D68A /* IssueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueModel.swift; sourceTree = "<group>"; };
@@ -340,6 +344,8 @@
 		BCD593FA24DBB13A007E155A /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				BC01214424DE6BD20037432A /* IssueDetailView.swift */,
+				BC01214624DE6C040037432A /* IssueDetailView.xib */,
 				BCD593FB24DBB144007E155A /* Cell */,
 				BCD593F524DBB08D007E155A /* IssueDetailTableViewFooterView */,
 				BCD593EE24DBAC3D007E155A /* IssueDetailTableViewHeaderView */,
@@ -597,6 +603,7 @@
 				BCD593EC24DB15CE007E155A /* IssueDetail.storyboard in Resources */,
 				BCD5940524DBB64E007E155A /* IssueDetailHeaderTableViewCell.xib in Resources */,
 				BC5ED41F24D7EF6D0082147A /* Assets.xcassets in Resources */,
+				BC01214724DE6C040037432A /* IssueDetailView.xib in Resources */,
 				BC5ED41D24D7EF6B0082147A /* Main.storyboard in Resources */,
 				BCD593F424DBACB7007E155A /* IssueDetailTableViewHeaderView.xib in Resources */,
 				BC225CDA24D9DDD400E2D68A /* IssuesTableViewCell.xib in Resources */,
@@ -695,6 +702,7 @@
 				BCE2630224DBEB3100DAF90C /* IssueCommentNodeModel.swift in Sources */,
 				BC5ED41624D7EF6B0082147A /* AppDelegate.swift in Sources */,
 				BCF5F43824DC683E002C2B53 /* IssuesWireFrameProtocol.swift in Sources */,
+				BC01214524DE6BD20037432A /* IssueDetailView.swift in Sources */,
 				BCF5F43524DC666D002C2B53 /* IssuesRemoteDataManager.swift in Sources */,
 				BC225CC624D9D26600E2D68A /* IssueModel.swift in Sources */,
 				BCF5F43A24DC6860002C2B53 /* IssuesWireFrame.swift in Sources */,

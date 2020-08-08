@@ -22,6 +22,7 @@ class IssueDetailViewController: UIViewController {
     @IBOutlet weak var bodyTextLb: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var contentView: UIView!
     // MARK: - Properties
     private var headerView: IssueDetailTableViewHeaderView?
     private var footerView: IssueDetailTableViewFooterView?
@@ -32,25 +33,34 @@ class IssueDetailViewController: UIViewController {
     }
     var presenter: IssueDetailPresenterProtocol?
     
+    
+    
+    
+    private var detailView: IssueDetailView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let view = Utils.viewFrom(IssueDetailView.nibName) as! IssueDetailView
+        detailView = view
+        contentView.addChildView(detailView!)
         
         if let presenter = presenter {
             presenter.viewDidload()
         }
         
-        bodyTextLb.numberOfLines = 0
-        countParticipantLb.numberOfLines = 0
-        countCommentLb.numberOfLines = 0
-        avatarImageView.isCircleRadius()
-        
-        tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
-        tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isScrollEnabled = true
-        tableView.estimatedSectionHeaderHeight = 150
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
+//        bodyTextLb.numberOfLines = 0
+//        countParticipantLb.numberOfLines = 0
+//        countCommentLb.numberOfLines = 0
+//        avatarImageView.isCircleRadius()
+//
+//        tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
+//        tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 0.1))
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.isScrollEnabled = true
+//        tableView.estimatedSectionHeaderHeight = 150
+//        tableView.sectionHeaderHeight = UITableView.automaticDimension
     }
 }
 
@@ -131,33 +141,36 @@ extension IssueDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension IssueDetailViewController: IssueDetailViewProtocol {
     func updateView() {
-        var titleStr: String = ""
-        var countCommentStr: String = ""
-        var countParticipantStr: String = ""
-        var avatarAuthorUrlStr: String = ""
-        if let issue = issueObj {
-            if let title = issue.title, title.count > 0 {
-                titleStr = title
-            }
-            countCommentStr = "\(issue.getCountComment())\n Comments"
-            countParticipantStr = "\(issue.getCountParticipant())\n Participant"
-            
-            if let state = issue.state {
-                if state == IssueState.open.rawValue {
-                    
-                }
-                else if state == IssueState.closed.rawValue {
-                    
-                }
-            }
-            avatarAuthorUrlStr = issue.getAvatarAuhtorUrl()
-            updateTimeLb.text = issue.getCreatedAtString()
-            bodyTextLb.text = issue.getBodyTextIssue()
+        if let view = detailView {
+            view.setupData(issueObj)
         }
-        titleLb.text = titleStr
-        countCommentLb.text = countCommentStr
-        countParticipantLb.text = countParticipantStr
-        avatarImageView.downloadImage(from: avatarAuthorUrlStr)
-        tableView.reloadData()
+//        var titleStr: String = ""
+//        var countCommentStr: String = ""
+//        var countParticipantStr: String = ""
+//        var avatarAuthorUrlStr: String = ""
+//        if let issue = issueObj {
+//            if let title = issue.title, title.count > 0 {
+//                titleStr = title
+//            }
+//            countCommentStr = "\(issue.getCountComment())\n Comments"
+//            countParticipantStr = "\(issue.getCountParticipant())\n Participant"
+//
+//            if let state = issue.state {
+//                if state == IssueState.open.rawValue {
+//
+//                }
+//                else if state == IssueState.closed.rawValue {
+//
+//                }
+//            }
+//            avatarAuthorUrlStr = issue.getAvatarAuhtorUrl()
+//            updateTimeLb.text = issue.getCreatedAtString()
+//            bodyTextLb.text = issue.getBodyTextIssue()
+//        }
+//        titleLb.text = titleStr
+//        countCommentLb.text = countCommentStr
+//        countParticipantLb.text = countParticipantStr
+//        avatarImageView.downloadImage(from: avatarAuthorUrlStr)
+//        tableView.reloadData()
     }
 }

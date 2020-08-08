@@ -112,16 +112,21 @@ extension IssueDetailViewController: UITableViewDelegate, UITableViewDataSource 
 //        return tmpLabel.intrinsicContentSize.height + 200
 //    }
     
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let view = UIView.init()
-//        view.backgroundColor = .blue
-//        view.frame = CGRect.init(x: 0, y: 0, width: Utils.screenSize().width, height: 100)
-//        return view
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 500
-//    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 0 {
+            if footerView == nil {
+                let view = Utils.viewFrom(IssueDetailTableViewFooterView.nibName()) as! IssueDetailTableViewFooterView
+                footerView = view
+            }
+            footerView?.setupData(issueObj)
+            return footerView
+        }
+        return nil
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 200
+    }
 }
 
 extension IssueDetailViewController: IssueDetailViewProtocol {

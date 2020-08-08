@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="104" id="a4Q-Cj-cxf" customClass="IssueCommentTableViewCell" customModule="ApolloGraphQL" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IssueCommentTableViewCell" rowHeight="104" id="a4Q-Cj-cxf" customClass="IssueCommentTableViewCell" customModule="ApolloGraphQL" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a4Q-Cj-cxf" id="kdk-cD-Z28">
@@ -61,6 +61,12 @@
                     <constraint firstItem="hly-lb-DQn" firstAttribute="leading" secondItem="08v-1F-ldA" secondAttribute="trailing" constant="15" id="sgp-EF-4c2"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avartarImageView" destination="08v-1F-ldA" id="bll-wE-807"/>
+                <outlet property="bodyTextLb" destination="7Nx-Xd-hBP" id="3bz-ac-7Sl"/>
+                <outlet property="nameLb" destination="hly-lb-DQn" id="zEn-Iw-xC6"/>
+                <outlet property="updatedAtLb" destination="jAC-eV-neF" id="XKp-CW-0l5"/>
+            </connections>
             <point key="canvasLocation" x="60.869565217391312" y="143.97321428571428"/>
         </tableViewCell>
     </objects>

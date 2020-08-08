@@ -33,4 +33,14 @@ public final class Utils {
         }
         return nil
     }
+    
+    class func nib(_ name: String) -> UINib? {
+        let nib: UINib? = UINib(nibName: name, bundle: Bundle.main)
+        return nib
+    }
+    
+    class func registerNibWithTableView(_ nibName: String, tableView: UITableView) {
+        let nib = Utils.nib(nibName)
+        tableView.register(nib, forCellReuseIdentifier: nibName)
+    }
 }

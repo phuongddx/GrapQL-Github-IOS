@@ -41,3 +41,32 @@ class IssueCommentNodeDetailModel: Object, Mappable {
         url <- map["url"]
     }
 }
+
+extension IssueCommentNodeDetailModel {
+    func getBodyText() -> String {
+        if let bodytext = bodyText, bodyText?.isEmpty == false {
+            return bodytext
+        }
+        return ""
+    }
+    func getAuthorName() -> String {
+        if let author = author, let name = author.username, name.isEmpty == false {
+            return name
+        }
+        return "No Name"
+    }
+    
+    func getUpdateAtTimeString() -> String {
+        if let updatetime = updatedAt, updatedAt?.isEmpty == false {
+            return updatetime
+        }
+        return ""
+    }
+    
+    func getAuthorAvatarUrl() -> String {
+        if let author = author, let url = author.avatarUrl, url.isEmpty == false {
+            return url
+        }
+        return ""
+    }
+}

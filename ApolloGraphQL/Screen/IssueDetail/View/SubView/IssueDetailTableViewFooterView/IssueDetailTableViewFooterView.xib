@@ -25,6 +25,9 @@
                 <constraint firstAttribute="bottom" secondItem="ewq-Pg-Mv7" secondAttribute="bottom" id="jdA-93-alh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tableView" destination="ewq-Pg-Mv7" id="noN-3E-UbP"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="-151.33928571428569"/>
         </view>
     </objects>

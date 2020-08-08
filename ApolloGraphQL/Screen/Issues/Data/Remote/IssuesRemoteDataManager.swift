@@ -16,7 +16,7 @@ class IssuesRemoteDataManager: IssuesRemoteDataManagerInputProtocol {
     private let nameRepo: String = "GrapQL-Github-IOS"
     
     func getIssues() {
-        let query = ListIssueQuery.init(owner: ownerStr, name: nameRepo, numberIssue: 100, states: [IssueState.open])
+        let query = ListIssueQuery.init(owner: ownerStr, name: nameRepo, numberIssue: 100, states: [IssueState.open, IssueState.closed])
         apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheData, context: nil, queue: .main) { [weak self] (results) in
             switch results {
             case .success(let results):

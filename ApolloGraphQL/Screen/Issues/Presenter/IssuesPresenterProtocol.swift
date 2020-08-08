@@ -18,4 +18,6 @@ protocol IssuesPresenterProtocol: class {
     
     func viewDidLoad()
     func pushIssueDetail(issueId: String)
+    func reloadData()
+    func handleChangeStateIssue(index: Int)
 }

@@ -31,6 +31,30 @@ class IssuesPresenter: IssuesPresenterProtocol {
             wireFrame.pushIssueDetail(issueId, from: view)
         }
     }
+    
+    func reloadData() {
+        interactor?.getIssues()
+    }
+    
+    func handleChangeStateIssue(index: Int) {
+        var tmpList: IssueList!
+        if let interactor = interactor {
+            interactor.initIssues()
+        }
+        if let issueList = issueList, issueList.isInvalidated == false, issueList.count > 0 {
+            if index == 0 {
+                tmpList = issueList.filter("state = %@", IssueState.open.rawValue)
+                self.issueList = tmpList
+            }
+            else if index == 1 {
+                tmpList = issueList.filter("state = %@", IssueState.closed.rawValue)
+                self.issueList = tmpList
+            }
+        }
+        if let view = view {
+            view.updateView()
+        }
+    }
 }
 extension IssuesPresenter: IssuesInteractorOutputProtocol {
     func didInitIssues(_ issues: Results<IssueNodeModel>) {

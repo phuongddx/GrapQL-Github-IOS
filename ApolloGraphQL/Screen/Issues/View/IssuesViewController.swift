@@ -32,9 +32,10 @@ class IssuesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        segmentedControl.selectedSegmentIndex = 0
         if let presenter = presenter {
             presenter.viewDidLoad()
+            presenter.handleChangeStateIssue(index: 0)
         }
         
         refreshControl.tintColor = .darkGray
@@ -46,18 +47,18 @@ class IssuesViewController: UIViewController {
         tableView.separatorColor = UIColor.lightGray
         tableView.delegate = self
         tableView.dataSource = self
+        
+        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        
     }
     
-    
-    
+    @objc func reloadData() {
+        presenter?.reloadData()
+    }
+
     @IBAction func segmentedControl_ValueChanged(_ sender: Any) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            print("0")
-        case 1:
-            print("1")
-        default:
-            print("error")
+        if let presenter = presenter {
+            presenter.handleChangeStateIssue(index: segmentedControl.selectedSegmentIndex)
         }
     }
 }
